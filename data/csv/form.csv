@@ -1,0 +1,231 @@
+id,form
+1,Mega Venusaur
+2,Mega Charizard X
+3,Mega Charizard Y
+4,Mega Blastoise
+5,Mega Beedrill
+6,Mega Pidgeot
+7,Alolan Rattata
+8,Alolan Raticate
+9,Partner Pikachu
+10,Alolan Raichu
+11,Alolan Sandshrew
+12,Alolan Sandslash
+13,Alolan Vulpix
+14,Alolan Ninetales
+15,Alolan Diglett
+16,Alolan Dugtrio
+17,Alolan Meowth
+18,Galarian Meowth
+19,Alolan Persian
+20,Hisuian Growlithe
+21,Hisuian Arcanine
+22,Mega Alakazam
+23,Alolan Geodude
+24,Alolan Graveler
+25,Alolan Golem
+26,Galarian Ponyta
+27,Galarian Rapidash
+28,Galarian Slowpoke
+29,Mega Slowbro
+30,Galarian Slowbro
+31,Galarian Farfetch'd
+32,Alolan Grimer
+33,Alolan Muk
+34,Mega Gengar
+35,Hisuian Voltorb
+36,Hisuian Electrode
+37,Alolan Exeggutor
+38,Alolan Marowak
+39,Galarian Weezing
+40,Mega Kangaskhan
+41,Galarian Mr. Mime
+42,Mega Pinsir
+43,Combat Breed
+44,Blaze Breed
+45,Aqua Breed
+46,Mega Gyarados
+47,Partner Eevee
+48,Mega Aerodactyl
+49,Galarian Articuno
+50,Galarian Zapdos
+51,Galarian Moltres
+52,Mega Mewtwo X
+53,Mega Mewtwo Y
+54,Hisuian Typhlosion
+55,Mega Ampharos
+56,Paldean Wooper
+57,Galarian Slowking
+58,Mega Steelix
+59,Hisuian Qwilfish
+60,Mega Scizor
+61,Mega Heracross
+62,Hisuian Sneasel
+63,Galarian Corsola
+64,Mega Houndoom
+65,Mega Tyranitar
+66,Mega Sceptile
+67,Mega Blaziken
+68,Mega Swampert
+69,Galarian Zigzagoon
+70,Galarian Linoone
+71,Mega Gardevoir
+72,Mega Sableye
+73,Mega Mawile
+74,Mega Aggron
+75,Mega Medicham
+76,Mega Manectric
+77,Mega Sharpedo
+78,Mega Camerupt
+79,Mega Altaria
+80,Sunny Form
+81,Rainy Form
+82,Snowy Form
+83,Mega Banette
+84,Mega Absol
+85,Mega Glalie
+86,Mega Salamence
+87,Mega Metagross
+88,Mega Latias
+89,Mega Latios
+90,Primal Kyogre
+91,Primal Groudon
+92,Mega Rayquaza
+93,Normal Forme
+94,Attack Forme
+95,Defense Forme
+96,Speed Forme
+97,Plant Cloak
+98,Sandy Cloak
+99,Trash Cloak
+100,Plant Cloak
+101,Sandy Cloak
+102,Trash Cloak
+103,Mega Lopunny
+104,Mega Garchomp
+105,Mega Lucario
+106,Mega Abomasnow
+107,Mega Gallade
+108,Heat Rotom
+109,Wash Rotom
+110,Frost Rotom
+111,Fan Rotom
+112,Mow Rotom
+113,Origin Forme
+114,Origin Forme
+115,Altered Forme
+116,Origin Forme
+117,Land Forme
+118,Sky Forme
+119,Hisuian Samurott
+120,Mega Audino
+121,Hisuian Lilligant
+122,Red-Striped Form
+123,Blue-Striped Form
+124,White-Striped Form
+125,Galarian Darumaka
+126,Standard Mode
+127,Zen Mode
+128,Galarian Standard Mode
+129,Galarian Zen Mode
+130,Galarian Yamask
+131,Hisuian Zorua
+132,Hisuian Zoroark
+133,Galarian Stunfisk
+134,Hisuian Braviary
+135,Incarnate Forme
+136,Therian Forme
+137,Incarnate Forme
+138,Therian Forme
+139,Incarnate Forme
+140,Therian Forme
+141,White Kyurem
+142,Black Kyurem
+143,Ordinary Form
+144,Resolute Form
+145,Aria Forme
+146,Pirouette Forme
+147,Ash-Greninja
+148,Male
+149,Female
+150,Shield Forme
+151,Blade Forme
+152,Hisuian Sliggoo
+153,Hisuian Goodra
+154,Average Size
+155,Small Size
+156,Large Size
+157,Super Size
+158,Average Size
+159,Small Size
+160,Large Size
+161,Super Size
+162,Hisuian Avalugg
+163,50% Forme
+164,10% Forme
+165,Complete Forme
+166,Mega Diancie
+167,Hoopa Confined
+168,Hoopa Unbound
+169,Hisuian Decidueye
+170,Baile Style
+171,Pom-Pom Style
+172,Pa'u Style
+173,Sensu Style
+174,Own Tempo Rockruff
+175,Midday Form
+176,Midnight Form
+177,Dusk Form
+178,Solo Form
+179,School Form
+180,Meteor Form
+181,Core Form
+182,Dusk Mane Necrozma
+183,Dawn Wings Necrozma
+184,Ultra Necrozma
+185,Amped Form
+186,Low Key Form
+187,Ice Face
+188,Noice Face
+189,Male
+190,Female
+191,Full Belly Mode
+192,Hangry Mode
+193,Hero of Many Battles
+194,Crowned Sword
+195,Hero of Many Battles
+196,Crowned Shield
+197,Eternamax
+198,Single Strike Style
+199,Rapid Strike Style
+200,Ice Rider
+201,Shadow Rider
+202,Bloodmoon
+203,Male
+204,Female
+205,Incarnate Forme
+206,Therian Forme
+207,Male
+208,Female
+209,Family of Four
+210,Family of Three
+211,Green Plumage
+212,Blue Plumage
+213,Yellow Plumage
+214,White Plumage
+215,Zero Form
+216,Hero Form
+217,Curly Form
+218,Droopy Form
+219,Stretchy Form
+220,Two-Segment Form
+221,Three-Segment Form
+222,Chest Form
+223,Roaming Form
+224,Teal Mask
+225,Wellspring Mask
+226,Hearthflame Mask
+227,Cornerstone Mask
+228,Normal Form
+229,Terastal Form
+230,Stellar Form

@@ -1,0 +1,69 @@
+gym_id,gym_name,region,specialty_type_id,location,badge_name
+1,Pewter Gym,Kanto,13,Pewter City,Boulder Badge
+2,Cerulean Gym,Kanto,5,Cerulean City,Cascade Badge
+3,Vermilion Gym,Kanto,8,Vermilion City,Thunder Badge
+4,Celadon Gym,Kanto,1,Celadon City,Rainbow Badge
+5,Fuchsia Gym,Kanto,2,Fuchsia City,Soul Badge
+6,Saffron Gym,Kanto,12,Saffron City,Marsh Badge
+7,Cinnabar Gym,Kanto,3,Cinnabar Island,Volcano Badge
+8,Viridian Gym,Kanto,9,Viridian City,Earth Badge
+9,Violet Gym,Johto,4,Violet City,Zephyr Badge
+10,Azalea Gym,Johto,6,Azalea Town,Hive Badge
+11,Goldenrod Gym,Johto,7,Goldenrod City,Plain Badge
+12,Ecruteak Gym,Johto,16,Ecruteak City,Fog Badge
+13,Cianwood Gym,Johto,11,Cianwood City,Storm Badge
+14,Olivine Gym,Johto,14,Olivine City,Mineral Badge
+15,Mahogany Gym,Johto,15,Mahogany Town,Glacier Badge
+16,Blackthorn Gym,Johto,17,Blackthorn City,Rising Badge
+17,Rustboro Gym,Hoenn,13,Rustboro City,Stone Badge
+18,Dewford Gym,Hoenn,11,Dewford Town,Knuckle Badge
+19,Mauville Gym,Hoenn,8,Mauville City,Dynamo Badge
+20,Lavaridge Gym,Hoenn,3,Lavaridge Town,Heat Badge
+21,Petalburg Gym,Hoenn,7,Petalburg City,Balance Badge
+22,Fortree Gym,Hoenn,4,Fortree City,Feather Badge
+23,Mossdeep Gym,Hoenn,12,Mossdeep City,Mind Badge
+24,Sootopolis Gym,Hoenn,5,Sootopolis City,Rain Badge
+25,Oreburgh Gym,Sinnoh,13,Oreburgh City,Coal Badge
+26,Eterna Gym,Sinnoh,1,Eterna City,Forest Badge
+27,Veilstone Gym,Sinnoh,11,Veilstone City,Cobble Badge
+28,Pastoria Gym,Sinnoh,5,Pastoria City,Fen Badge
+29,Hearthome Gym,Sinnoh,16,Hearthome City,Relic Badge
+30,Canalave Gym,Sinnoh,14,Canalave City,Mine Badge
+31,Snowpoint Gym,Sinnoh,15,Snowpoint City,Icicle Badge
+32,Sunyshore Gym,Sinnoh,8,Sunyshore City,Beacon Badge
+33,Striaton Gym,Unova,1,Striaton City,Trio Badge
+34,Nacrene Gym,Unova,7,Nacrene City,Basic Badge
+35,Castelia Gym,Unova,6,Castelia City,Insect Badge
+36,Nimbasa Gym,Unova,8,Nimbasa City,Bolt Badge
+37,Driftveil Gym,Unova,9,Driftveil City,Quake Badge
+38,Mistralton Gym,Unova,4,Mistralton City,Jet Badge
+39,Icirrus Gym,Unova,15,Icirrus City,Freeze Badge
+40,Opelucid Gym,Unova,17,Opelucid City,Legend Badge
+41,Santalune Gym,Kalos,6,Santalune City,Bug Badge
+42,Cyllage Gym,Kalos,13,Cyllage City,Cliff Badge
+43,Shalour Gym,Kalos,11,Shalour City,Rumble Badge
+44,Coumarine Gym,Kalos,1,Coumarine City,Plant Badge
+45,Lumiose Gym,Kalos,8,Lumiose City,Voltage Badge
+46,Laverre Gym,Kalos,10,Laverre City,Fairy Badge
+47,Anistar Gym,Kalos,12,Anistar City,Psychic Badge
+48,Snowbelle Gym,Kalos,15,Snowbelle City,Iceberg Badge
+49,Melemele Island Trial,Alola,11,Melemele Island,Z-Crystal
+50,Akala Island Trial,Alola,13,Akala Island,Z-Crystal
+51,Ula'ula Island Trial,Alola,8,Ula'ula Island,Z-Crystal
+52,Poni Island Trial,Alola,9,Poni Island,Z-Crystal
+53,Turffield Gym,Galar,1,Turffield,Grass Badge
+54,Hulbury Gym,Galar,5,Hulbury,Water Badge
+55,Motostoke Gym,Galar,3,Motostoke,Fire Badge
+56,Stow-on-Side Gym,Galar,16,Stow-on-Side,Fighting/Ghost Badge
+57,Ballonlea Gym,Galar,10,Ballonlea,Fairy Badge
+58,Circhester Gym,Galar,15,Circhester,Ice/Rock Badge
+59,Spikemuth Gym,Galar,18,Spikemuth,Dark Badge
+60,Hammerlocke Gym,Galar,17,Hammerlocke,Dragon Badge
+61,Cortondo Gym,Paldea,6,Cortondo,Bug Badge
+62,Artazon Gym,Paldea,1,Artazon,Grass Badge
+63,Levincia Gym,Paldea,8,Levincia,Electric Badge
+64,Cascarrafa Gym,Paldea,5,Cascarrafa,Water Badge
+65,Medali Gym,Paldea,7,Medali,Normal Badge
+66,Montenevera Gym,Paldea,16,Montenevera,Ghost Badge
+67,Alfornada Gym,Paldea,12,Alfornada,Psychic Badge
+68,Glaseado Gym,Paldea,15,Glaseado,Ice Badge
