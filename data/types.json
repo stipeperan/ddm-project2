@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "normal",
+    "name": "Normal"
+  },
+  {
+    "_id": "fire",
+    "name": "Fire"
+  },
+  {
+    "_id": "water",
+    "name": "Water"
+  },
+  {
+    "_id": "electric",
+    "name": "Electric"
+  },
+  {
+    "_id": "grass",
+    "name": "Grass"
+  },
+  {
+    "_id": "ice",
+    "name": "Ice"
+  },
+  {
+    "_id": "fighting",
+    "name": "Fighting"
+  },
+  {
+    "_id": "poison",
+    "name": "Poison"
+  },
+  {
+    "_id": "ground",
+    "name": "Ground"
+  },
+  {
+    "_id": "flying",
+    "name": "Flying"
+  },
+  {
+    "_id": "psychic",
+    "name": "Psychic"
+  },
+  {
+    "_id": "bug",
+    "name": "Bug"
+  },
+  {
+    "_id": "rock",
+    "name": "Rock"
+  },
+  {
+    "_id": "ghost",
+    "name": "Ghost"
+  },
+  {
+    "_id": "dragon",
+    "name": "Dragon"
+  },
+  {
+    "_id": "dark",
+    "name": "Dark"
+  },
+  {
+    "_id": "steel",
+    "name": "Steel"
+  },
+  {
+    "_id": "fairy",
+    "name": "Fairy"
+  }
+]
