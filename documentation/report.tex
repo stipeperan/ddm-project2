@@ -1,31 +1,189 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{listings}
 
 \geometry{a4paper, margin=1in}      
-\title{Project Report}
-\author{Your Name}
-\date{\today}   
+\title{Project 2 - Pokémon world in MongoDB}
+\author{Group 8: Simone Cotardo, Srimal Fonseka, Arthur Morgan, Stipe Peran}
+\date{\today}  
+
+\lstdefinelanguage{Mongo}{
+  morekeywords={db,find,insertOne,insertMany,updateOne,updateMany,deleteOne,deleteMany,aggregate,match,project,group,lookup,unwind,limit,sort,set,push,addToSet},
+  keywordstyle=\color{blue}\bfseries,
+  sensitive=true,
+  morecomment=[l]{//},
+  morestring=[b]",
+}
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{black!1},
+  breaklines=true,
+  xleftmargin=0.5em,
+  language=Mongo
+}
+
 \begin{document}
     \maketitle
-    \begin{abstract}
-        This report provides an overview of the project, including objectives, methodology, results, and conclusions.
-    \end{abstract}
-    \section{Introduction}
-    The introduction section outlines the background and objectives of the project.
+    
+    \section{Project Scenario}
+    Following the first project implemented in Neo4j, we decided to model the Pokémon world using a document-oriented approach in MongoDB. 
+    Instead of focusing on graph relationships such as \texttt{EVOLVES\_TO} or \texttt{OWNS}, this second project focuses on storing and querying semistructured documents efficiently.
+
+    MongoDB's document model suits this domain well, as Pokémon, trainers, gyms and battles naturally contain nested attributes, arrays and flexible structures that do not require strong normalization.
+
+    Our goal was to reconstruct the same universe used in Project 1, but mapped into document collections. The real data used in the project comes from five JSON files:
+    \begin{itemize}
+        \item \texttt{pokemon.json}
+        \item \texttt{trainer.json}
+        \item \texttt{gym.json}
+        \item \texttt{type.json}
+        \item \texttt{battles.json}
+    \end{itemize}
+    
     \section{Methodology}
-    This section describes the methods and procedures used to carry out the project.
+    \subsection{Dataset and Preprocessing}
+    We reused the dataset previously collected for the Neo4j project. The main source was a JSON dataset containing Pokémon information (ID, name, stats, type, and evolution line).  
+    Data were cleaned and normalized using Python (Pandas), and exported as multiple collections in MongoDB.
+
+    The database was deployed using \textbf{MongoDB Compass} for visualization and the \textbf{mongo shell} for queries.
+
+    \subsection{Collections and Schema Design}
+    The document model was designed according to the \emph{Schema-on-Read} philosophy introduced during the NoSQL lectures. Each document stores semistructured data in JSON format, allowing variable fields and embedded subdocuments.
+
+    \paragraph{Collections}
+    \begin{itemize}
+    \item \textbf{pokemon}: canonical Pokémon entries with attributes, types, and evolutions.
+    \item \textbf{trainers}: documents describing each trainer and their owned Pokémon.
+    \item \textbf{gyms}: gym entities and their corresponding specialty types.
+    \item \textbf{types}: static collection containing the 18 Pokémon types.
+    \item \textbf{battles}: match history between trainers and Pokémon.
+    \end{itemize}
+
+    \paragraph{Example Pokémon document}
+    \begin{lstlisting}
+    {
+    "_id": 1,
+    "name": "Bulbasaur",
+    "form": "No form",
+    "type": ["Grass", "Poison"],
+    "stats": {
+        "hp": 45, "attack": 49, "defense": 49,
+        "sp_atk": 65, "sp_def": 65, "speed": 45
+    },
+    "total": 318,
+    "description": "Bulbasaur is a Grass/Poison type Pokemon...",
+    "evolution_line": ["Bulbasaur", "Ivysaur", "Venusaur"]
+    }
+    \end{lstlisting}
+
+    This schema reflects MongoDB’s flexible document model, supporting nested structures and arrays, unlike the normalized tables of relational databases or edge-based graph storage.
+
     \section{Results}
-    Here, we present the findings and results obtained from the project.
+    \subsection{Queries}
+    Twelve representative queries were implemented to demonstrate real-world data retrieval, filtering, and aggregation.  
+
+    \paragraph{1. Find all Grass-type Pokémon}
+    \begin{lstlisting}
+    db.pokemon.find({ type: "Grass" })
+    \end{lstlisting}
+
+    \paragraph{2. List all Pokémon with Total score above 500}
+    \begin{lstlisting}
+    db.pokemon.find({ total: { $gt: 500 } }, { name: 1, total: 1 })
+    \end{lstlisting}
+
+    \paragraph{3. Find Pokémon that evolve into Venusaur}
+    \begin{lstlisting}
+    db.pokemon.find({ evolution_line: "Venusaur" })
+    \end{lstlisting}
+
+    \paragraph{4. Count Pokémon per type}
+    \begin{lstlisting}
+    db.pokemon.aggregate([
+    { $unwind: "$type" },
+    { $group: { _id: "$type", count: { $sum: 1 } } },
+    { $sort: { count: -1 } }
+    ])
+    \end{lstlisting}
+
+    \paragraph{5. Get the fastest Pokémon}
+    \begin{lstlisting}
+    db.pokemon.find().sort({ "stats.speed": -1 }).limit(1)
+    \end{lstlisting}
+
+    \paragraph{6. Retrieve all Pokémon and their evolution stages}
+    \begin{lstlisting}
+    db.pokemon.find({}, { name: 1, evolution_line: 1 })
+    \end{lstlisting}
+
+    \paragraph{7. Find Pokémon that share both types Grass and Poison}
+    \begin{lstlisting}
+    db.pokemon.find({ type: { $all: ["Grass", "Poison"] } })
+    \end{lstlisting}
+
+    \paragraph{8. Average attack per type}
+    \begin{lstlisting}
+    db.pokemon.aggregate([
+    { $unwind: "$type" },
+    { $group: { _id: "$type", avg_attack: { $avg: "$stats.attack" } } },
+    { $sort: { avg_attack: -1 } }
+    ])
+    \end{lstlisting}
+
+    \paragraph{9. Insert a new Pokémon}
+    \begin{lstlisting}
+    db.pokemon.insertOne({
+    "id": 999,
+    "name": "Newmon",
+    "type": ["Fairy"],
+    "stats": { "hp": 80, "attack": 70, "defense": 60 },
+    "total": 410
+    })
+    \end{lstlisting}
+
+    \paragraph{10. Update Venusaur’s description}
+    \begin{lstlisting}
+    db.pokemon.updateOne(
+    { name: "Venusaur" },
+    { $set: { description: "Updated description for Venusaur." } }
+    )
+    \end{lstlisting}
+
+    \paragraph{11. Delete Pokémon with missing stats}
+    \begin{lstlisting}
+    db.pokemon.deleteMany({ "stats.hp": { $exists: false } })
+    \end{lstlisting}
+
+    \paragraph{12. Find top 3 Pokémon by total score}
+    \begin{lstlisting}
+    db.pokemon.find({}, { name: 1, total: 1 })
+    .sort({ total: -1 }).limit(3)
+    \end{lstlisting}
+
+    \subsection{Editing Commands}
+    Five additional editing commands were included, demonstrating MongoDB’s flexibility for inserts, updates, and deletes. These operations mimic real-world changes such as new Pokémon discovery or stat correction.
+
     \section{Discussion}
-    This section interprets the results and discusses their implications.
+    Compared to Neo4j, MongoDB excels in:
+    \begin{itemize}
+    \item \textbf{Data ingestion speed:} loading JSON documents was faster than importing CSVs and building relationships in Neo4j.
+    \item \textbf{Flexibility:} the schema-less design allows embedding and easy updates.
+    \item \textbf{Horizontal scalability:} MongoDB scales out with sharding, as introduced in the lecture on data architectures \cite{brambilla-architectures}.
+    \end{itemize}
+
+    However, Neo4j remains more efficient for relationship-heavy queries such as multi-hop evolutions, due to its index-free adjacency. MongoDB required more explicit aggregations for such traversals.
+
     \section{Conclusion}
-    The conclusion summarizes the key points and suggests future work.
-    \section{References}
-    \bibliographystyle{plain}
-    \bibliography{references}
+    This project successfully migrated the Pokémon world model from a graph to a document-oriented representation.  
+    We demonstrated how MongoDB can manage complex entities like Pokémon, trainers, and battles within flexible JSON structures.  
+    While Neo4j is superior for analyzing relationships, MongoDB provides better performance and simplicity for hierarchical, nested, and document-centric data.
+
+    Future work may include integrating the dataset into a web interface or building an analytics dashboard using MongoDB Atlas and Aggregation Pipelines.
+
 \end{document}
