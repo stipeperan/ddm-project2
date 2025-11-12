@@ -1,0 +1,546 @@
+[
+    {
+        "_id": "1",
+        "name": "Pewter Gym",
+        "region": "Kanto",
+        "type": "13",
+        "location": "Pewter City",
+        "badge_name": "Boulder Badge"
+    },
+    {
+        "_id": "2",
+        "name": "Cerulean Gym",
+        "region": "Kanto",
+        "type": "5",
+        "location": "Cerulean City",
+        "badge_name": "Cascade Badge"
+    },
+    {
+        "_id": "3",
+        "name": "Vermilion Gym",
+        "region": "Kanto",
+        "type": "8",
+        "location": "Vermilion City",
+        "badge_name": "Thunder Badge"
+    },
+    {
+        "_id": "4",
+        "name": "Celadon Gym",
+        "region": "Kanto",
+        "type": "1",
+        "location": "Celadon City",
+        "badge_name": "Rainbow Badge"
+    },
+    {
+        "_id": "5",
+        "name": "Fuchsia Gym",
+        "region": "Kanto",
+        "type": "2",
+        "location": "Fuchsia City",
+        "badge_name": "Soul Badge"
+    },
+    {
+        "_id": "6",
+        "name": "Saffron Gym",
+        "region": "Kanto",
+        "type": "12",
+        "location": "Saffron City",
+        "badge_name": "Marsh Badge"
+    },
+    {
+        "_id": "7",
+        "name": "Cinnabar Gym",
+        "region": "Kanto",
+        "type": "3",
+        "location": "Cinnabar Island",
+        "badge_name": "Volcano Badge"
+    },
+    {
+        "_id": "8",
+        "name": "Viridian Gym",
+        "region": "Kanto",
+        "type": "9",
+        "location": "Viridian City",
+        "badge_name": "Earth Badge"
+    },
+    {
+        "_id": "9",
+        "name": "Violet Gym",
+        "region": "Johto",
+        "type": "4",
+        "location": "Violet City",
+        "badge_name": "Zephyr Badge"
+    },
+    {
+        "_id": "10",
+        "name": "Azalea Gym",
+        "region": "Johto",
+        "type": "6",
+        "location": "Azalea Town",
+        "badge_name": "Hive Badge"
+    },
+    {
+        "_id": "11",
+        "name": "Goldenrod Gym",
+        "region": "Johto",
+        "type": "7",
+        "location": "Goldenrod City",
+        "badge_name": "Plain Badge"
+    },
+    {
+        "_id": "12",
+        "name": "Ecruteak Gym",
+        "region": "Johto",
+        "type": "16",
+        "location": "Ecruteak City",
+        "badge_name": "Fog Badge"
+    },
+    {
+        "_id": "13",
+        "name": "Cianwood Gym",
+        "region": "Johto",
+        "type": "11",
+        "location": "Cianwood City",
+        "badge_name": "Storm Badge"
+    },
+    {
+        "_id": "14",
+        "name": "Olivine Gym",
+        "region": "Johto",
+        "type": "14",
+        "location": "Olivine City",
+        "badge_name": "Mineral Badge"
+    },
+    {
+        "_id": "15",
+        "name": "Mahogany Gym",
+        "region": "Johto",
+        "type": "15",
+        "location": "Mahogany Town",
+        "badge_name": "Glacier Badge"
+    },
+    {
+        "_id": "16",
+        "name": "Blackthorn Gym",
+        "region": "Johto",
+        "type": "17",
+        "location": "Blackthorn City",
+        "badge_name": "Rising Badge"
+    },
+    {
+        "_id": "17",
+        "name": "Rustboro Gym",
+        "region": "Hoenn",
+        "type": "13",
+        "location": "Rustboro City",
+        "badge_name": "Stone Badge"
+    },
+    {
+        "_id": "18",
+        "name": "Dewford Gym",
+        "region": "Hoenn",
+        "type": "11",
+        "location": "Dewford Town",
+        "badge_name": "Knuckle Badge"
+    },
+    {
+        "_id": "19",
+        "name": "Mauville Gym",
+        "region": "Hoenn",
+        "type": "8",
+        "location": "Mauville City",
+        "badge_name": "Dynamo Badge"
+    },
+    {
+        "_id": "20",
+        "name": "Lavaridge Gym",
+        "region": "Hoenn",
+        "type": "3",
+        "location": "Lavaridge Town",
+        "badge_name": "Heat Badge"
+    },
+    {
+        "_id": "21",
+        "name": "Petalburg Gym",
+        "region": "Hoenn",
+        "type": "7",
+        "location": "Petalburg City",
+        "badge_name": "Balance Badge"
+    },
+    {
+        "_id": "22",
+        "name": "Fortree Gym",
+        "region": "Hoenn",
+        "type": "4",
+        "location": "Fortree City",
+        "badge_name": "Feather Badge"
+    },
+    {
+        "_id": "23",
+        "name": "Mossdeep Gym",
+        "region": "Hoenn",
+        "type": "12",
+        "location": "Mossdeep City",
+        "badge_name": "Mind Badge"
+    },
+    {
+        "_id": "24",
+        "name": "Sootopolis Gym",
+        "region": "Hoenn",
+        "type": "5",
+        "location": "Sootopolis City",
+        "badge_name": "Rain Badge"
+    },
+    {
+        "_id": "25",
+        "name": "Oreburgh Gym",
+        "region": "Sinnoh",
+        "type": "13",
+        "location": "Oreburgh City",
+        "badge_name": "Coal Badge"
+    },
+    {
+        "_id": "26",
+        "name": "Eterna Gym",
+        "region": "Sinnoh",
+        "type": "1",
+        "location": "Eterna City",
+        "badge_name": "Forest Badge"
+    },
+    {
+        "_id": "27",
+        "name": "Veilstone Gym",
+        "region": "Sinnoh",
+        "type": "11",
+        "location": "Veilstone City",
+        "badge_name": "Cobble Badge"
+    },
+    {
+        "_id": "28",
+        "name": "Pastoria Gym",
+        "region": "Sinnoh",
+        "type": "5",
+        "location": "Pastoria City",
+        "badge_name": "Fen Badge"
+    },
+    {
+        "_id": "29",
+        "name": "Hearthome Gym",
+        "region": "Sinnoh",
+        "type": "16",
+        "location": "Hearthome City",
+        "badge_name": "Relic Badge"
+    },
+    {
+        "_id": "30",
+        "name": "Canalave Gym",
+        "region": "Sinnoh",
+        "type": "14",
+        "location": "Canalave City",
+        "badge_name": "Mine Badge"
+    },
+    {
+        "_id": "31",
+        "name": "Snowpoint Gym",
+        "region": "Sinnoh",
+        "type": "15",
+        "location": "Snowpoint City",
+        "badge_name": "Icicle Badge"
+    },
+    {
+        "_id": "32",
+        "name": "Sunyshore Gym",
+        "region": "Sinnoh",
+        "type": "8",
+        "location": "Sunyshore City",
+        "badge_name": "Beacon Badge"
+    },
+    {
+        "_id": "33",
+        "name": "Striaton Gym",
+        "region": "Unova",
+        "type": "1",
+        "location": "Striaton City",
+        "badge_name": "Trio Badge"
+    },
+    {
+        "_id": "34",
+        "name": "Nacrene Gym",
+        "region": "Unova",
+        "type": "7",
+        "location": "Nacrene City",
+        "badge_name": "Basic Badge"
+    },
+    {
+        "_id": "35",
+        "name": "Castelia Gym",
+        "region": "Unova",
+        "type": "6",
+        "location": "Castelia City",
+        "badge_name": "Insect Badge"
+    },
+    {
+        "_id": "36",
+        "name": "Nimbasa Gym",
+        "region": "Unova",
+        "type": "8",
+        "location": "Nimbasa City",
+        "badge_name": "Bolt Badge"
+    },
+    {
+        "_id": "37",
+        "name": "Driftveil Gym",
+        "region": "Unova",
+        "type": "9",
+        "location": "Driftveil City",
+        "badge_name": "Quake Badge"
+    },
+    {
+        "_id": "38",
+        "name": "Mistralton Gym",
+        "region": "Unova",
+        "type": "4",
+        "location": "Mistralton City",
+        "badge_name": "Jet Badge"
+    },
+    {
+        "_id": "39",
+        "name": "Icirrus Gym",
+        "region": "Unova",
+        "type": "15",
+        "location": "Icirrus City",
+        "badge_name": "Freeze Badge"
+    },
+    {
+        "_id": "40",
+        "name": "Opelucid Gym",
+        "region": "Unova",
+        "type": "17",
+        "location": "Opelucid City",
+        "badge_name": "Legend Badge"
+    },
+    {
+        "_id": "41",
+        "name": "Santalune Gym",
+        "region": "Kalos",
+        "type": "6",
+        "location": "Santalune City",
+        "badge_name": "Bug Badge"
+    },
+    {
+        "_id": "42",
+        "name": "Cyllage Gym",
+        "region": "Kalos",
+        "type": "13",
+        "location": "Cyllage City",
+        "badge_name": "Cliff Badge"
+    },
+    {
+        "_id": "43",
+        "name": "Shalour Gym",
+        "region": "Kalos",
+        "type": "11",
+        "location": "Shalour City",
+        "badge_name": "Rumble Badge"
+    },
+    {
+        "_id": "44",
+        "name": "Coumarine Gym",
+        "region": "Kalos",
+        "type": "1",
+        "location": "Coumarine City",
+        "badge_name": "Plant Badge"
+    },
+    {
+        "_id": "45",
+        "name": "Lumiose Gym",
+        "region": "Kalos",
+        "type": "8",
+        "location": "Lumiose City",
+        "badge_name": "Voltage Badge"
+    },
+    {
+        "_id": "46",
+        "name": "Laverre Gym",
+        "region": "Kalos",
+        "type": "10",
+        "location": "Laverre City",
+        "badge_name": "Fairy Badge"
+    },
+    {
+        "_id": "47",
+        "name": "Anistar Gym",
+        "region": "Kalos",
+        "type": "12",
+        "location": "Anistar City",
+        "badge_name": "Psychic Badge"
+    },
+    {
+        "_id": "48",
+        "name": "Snowbelle Gym",
+        "region": "Kalos",
+        "type": "15",
+        "location": "Snowbelle City",
+        "badge_name": "Iceberg Badge"
+    },
+    {
+        "_id": "49",
+        "name": "Melemele Island Trial",
+        "region": "Alola",
+        "type": "11",
+        "location": "Melemele Island",
+        "badge_name": "Z-Crystal"
+    },
+    {
+        "_id": "50",
+        "name": "Akala Island Trial",
+        "region": "Alola",
+        "type": "13",
+        "location": "Akala Island",
+        "badge_name": "Z-Crystal"
+    },
+    {
+        "_id": "51",
+        "name": "Ula'ula Island Trial",
+        "region": "Alola",
+        "type": "8",
+        "location": "Ula'ula Island",
+        "badge_name": "Z-Crystal"
+    },
+    {
+        "_id": "52",
+        "name": "Poni Island Trial",
+        "region": "Alola",
+        "type": "9",
+        "location": "Poni Island",
+        "badge_name": "Z-Crystal"
+    },
+    {
+        "_id": "53",
+        "name": "Turffield Gym",
+        "region": "Galar",
+        "type": "1",
+        "location": "Turffield",
+        "badge_name": "Grass Badge"
+    },
+    {
+        "_id": "54",
+        "name": "Hulbury Gym",
+        "region": "Galar",
+        "type": "5",
+        "location": "Hulbury",
+        "badge_name": "Water Badge"
+    },
+    {
+        "_id": "55",
+        "name": "Motostoke Gym",
+        "region": "Galar",
+        "type": "3",
+        "location": "Motostoke",
+        "badge_name": "Fire Badge"
+    },
+    {
+        "_id": "56",
+        "name": "Stow-on-Side Gym",
+        "region": "Galar",
+        "type": "16",
+        "location": "Stow-on-Side",
+        "badge_name": "Fighting/Ghost Badge"
+    },
+    {
+        "_id": "57",
+        "name": "Ballonlea Gym",
+        "region": "Galar",
+        "type": "10",
+        "location": "Ballonlea",
+        "badge_name": "Fairy Badge"
+    },
+    {
+        "_id": "58",
+        "name": "Circhester Gym",
+        "region": "Galar",
+        "type": "15",
+        "location": "Circhester",
+        "badge_name": "Ice/Rock Badge"
+    },
+    {
+        "_id": "59",
+        "name": "Spikemuth Gym",
+        "region": "Galar",
+        "type": "18",
+        "location": "Spikemuth",
+        "badge_name": "Dark Badge"
+    },
+    {
+        "_id": "60",
+        "name": "Hammerlocke Gym",
+        "region": "Galar",
+        "type": "17",
+        "location": "Hammerlocke",
+        "badge_name": "Dragon Badge"
+    },
+    {
+        "_id": "61",
+        "name": "Cortondo Gym",
+        "region": "Paldea",
+        "type": "6",
+        "location": "Cortondo",
+        "badge_name": "Bug Badge"
+    },
+    {
+        "_id": "62",
+        "name": "Artazon Gym",
+        "region": "Paldea",
+        "type": "1",
+        "location": "Artazon",
+        "badge_name": "Grass Badge"
+    },
+    {
+        "_id": "63",
+        "name": "Levincia Gym",
+        "region": "Paldea",
+        "type": "8",
+        "location": "Levincia",
+        "badge_name": "Electric Badge"
+    },
+    {
+        "_id": "64",
+        "name": "Cascarrafa Gym",
+        "region": "Paldea",
+        "type": "5",
+        "location": "Cascarrafa",
+        "badge_name": "Water Badge"
+    },
+    {
+        "_id": "65",
+        "name": "Medali Gym",
+        "region": "Paldea",
+        "type": "7",
+        "location": "Medali",
+        "badge_name": "Normal Badge"
+    },
+    {
+        "_id": "66",
+        "name": "Montenevera Gym",
+        "region": "Paldea",
+        "type": "16",
+        "location": "Montenevera",
+        "badge_name": "Ghost Badge"
+    },
+    {
+        "_id": "67",
+        "name": "Alfornada Gym",
+        "region": "Paldea",
+        "type": "12",
+        "location": "Alfornada",
+        "badge_name": "Psychic Badge"
+    },
+    {
+        "_id": "68",
+        "name": "Glaseado Gym",
+        "region": "Paldea",
+        "type": "15",
+        "location": "Glaseado",
+        "badge_name": "Ice Badge"
+    }
+]
