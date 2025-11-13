@@ -332,19 +332,15 @@ def generate_battles(
                 "date": battle_date_iso,
                 "gym_id": gym_id,
                 "participants": {
-                    "hasWon": [
-                        {
-                            "trainer_id": winner_trainer_id,
-                            "pokemon_id": winner_id,
-                        }
-                    ],
-                    "hasLost": [
-                        {
-                            "trainer_id": loser_trainer_id,
-                            "pokemon_id": loser_id,
-                        }
-                    ],
-                },
+                    "winner": {
+                        "trainer_id": winner_trainer_id,
+                        "pokemon_id": winner_id
+                    },
+                    "loser": {
+                        "trainer_id": loser_trainer_id,
+                        "pokemon_id": loser_id
+                    }
+                }
             }
 
             documents.append(battle_doc)
