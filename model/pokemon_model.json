@@ -1,0 +1,411 @@
+{
+  "collections": {
+    "pokemon.battles": {
+      "ns": "pokemon.battles",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "_id",
+          "date",
+          "gym_id",
+          "participants"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "string"
+          },
+          "date": {
+            "bsonType": "string"
+          },
+          "gym_id": {
+            "bsonType": "string"
+          },
+          "participants": {
+            "bsonType": "object",
+            "properties": {
+              "loser": {
+                "bsonType": "object",
+                "properties": {
+                  "pokemon_id": {
+                    "bsonType": "string"
+                  },
+                  "trainer_id": {
+                    "bsonType": "string"
+                  }
+                },
+                "required": [
+                  "pokemon_id",
+                  "trainer_id"
+                ]
+              },
+              "winner": {
+                "bsonType": "object",
+                "properties": {
+                  "pokemon_id": {
+                    "bsonType": "string"
+                  },
+                  "trainer_id": {
+                    "bsonType": "string"
+                  }
+                },
+                "required": [
+                  "pokemon_id",
+                  "trainer_id"
+                ]
+              }
+            },
+            "required": [
+              "loser",
+              "winner"
+            ]
+          }
+        }
+      }
+    },
+    "pokemon.gym": {
+      "ns": "pokemon.gym",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "_id",
+          "badge_name",
+          "location",
+          "name",
+          "region",
+          "type"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "string"
+          },
+          "badge_name": {
+            "bsonType": "string"
+          },
+          "location": {
+            "bsonType": "string"
+          },
+          "name": {
+            "bsonType": "string"
+          },
+          "region": {
+            "bsonType": "string"
+          },
+          "type": {
+            "bsonType": "string"
+          }
+        }
+      }
+    },
+    "pokemon.pokemon": {
+      "ns": "pokemon.pokemon",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "_id",
+          "evolves_to",
+          "has_form",
+          "name",
+          "pokedex",
+          "stats",
+          "types"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "string"
+          },
+          "evolves_to": {
+            "bsonType": [
+              "null",
+              "string"
+            ]
+          },
+          "has_form": {
+            "bsonType": [
+              "null",
+              "string"
+            ]
+          },
+          "name": {
+            "bsonType": "string"
+          },
+          "pokedex": {
+            "bsonType": "string"
+          },
+          "stats": {
+            "bsonType": "object",
+            "properties": {
+              "atk": {
+                "bsonType": "string"
+              },
+              "def": {
+                "bsonType": "string"
+              },
+              "hp": {
+                "bsonType": "string"
+              },
+              "sp_atk": {
+                "bsonType": "string"
+              },
+              "sp_def": {
+                "bsonType": "string"
+              },
+              "tot": {
+                "bsonType": "string"
+              }
+            },
+            "required": [
+              "atk",
+              "def",
+              "hp",
+              "sp_atk",
+              "sp_def",
+              "tot"
+            ]
+          },
+          "types": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            }
+          }
+        }
+      }
+    },
+    "pokemon.trainer": {
+      "ns": "pokemon.trainer",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "_id",
+          "leads",
+          "name",
+          "owns"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "string"
+          },
+          "leads": {
+            "bsonType": "null"
+          },
+          "name": {
+            "bsonType": "string"
+          },
+          "owns": {
+            "anyOf": [
+              {
+                "bsonType": "null"
+              },
+              {
+                "bsonType": "array",
+                "items": {
+                  "bsonType": "string"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "pokemon.type": {
+      "ns": "pokemon.type",
+      "jsonSchema": {
+        "bsonType": "object",
+        "required": [
+          "_id",
+          "name"
+        ],
+        "properties": {
+          "_id": {
+            "bsonType": "string"
+          },
+          "name": {
+            "bsonType": "string"
+          }
+        }
+      }
+    }
+  },
+  "relationships": [
+    {
+      "id": "a41d59bd-b495-4a2d-9d2c-28262544519e",
+      "relationship": [
+        {
+          "ns": "pokemon.type",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.gym",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "bbb4fbb6-a6c5-4511-bb1c-775f56525e14",
+      "relationship": [
+        {
+          "ns": "pokemon.gym",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.pokemon",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "e418e678-0fc3-40d1-9d02-0b4698744ce5",
+      "relationship": [
+        {
+          "ns": "pokemon.trainer",
+          "fields": [
+            "owns"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.pokemon",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "9dca9213-1b7f-41f1-901d-444c8266f87e",
+      "relationship": [
+        {
+          "ns": "pokemon.type",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.pokemon",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "0ac450e7-2573-49bd-9700-764f7c56f867",
+      "relationship": [
+        {
+          "ns": "pokemon.gym",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.trainer",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "e91c1969-055d-4d59-80f0-a2cdd190c7a8",
+      "relationship": [
+        {
+          "ns": "pokemon.pokemon",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.trainer",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "114be615-8d12-4ad5-b88b-67579ae34171",
+      "relationship": [
+        {
+          "ns": "pokemon.pokemon",
+          "fields": [
+            "evolves_to"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.trainer",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "ee2db709-e963-4512-a43a-ed700bbf4299",
+      "relationship": [
+        {
+          "ns": "pokemon.pokemon",
+          "fields": [
+            "has_form"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.trainer",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    },
+    {
+      "id": "d3e7fe91-b9c8-4dd5-9cb6-34528051a6a9",
+      "relationship": [
+        {
+          "ns": "pokemon.type",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        },
+        {
+          "ns": "pokemon.trainer",
+          "fields": [
+            "_id"
+          ],
+          "cardinality": 1
+        }
+      ],
+      "isInferred": true
+    }
+  ]
+}
