@@ -1,41 +1,89 @@
-// 2. Most powerful Pokémon
-db.Pokemon.find({}, { _id: 0, name: 1}).sort({"stats.tot": -1}).limit(1)
+
 
 // 4. Most winning Pokémon
 db.Battle.aggregate([
-  // Count wins per Pokémon ID
+    // Count wins per Pokémon ID
+    {
+        $group: {
+            _id: "$participants.winner.pokemon_id",
+            wins: { $sum: 1 }
+        }
+    },
+    
+    // Sort by number of wins
+    { $sort: { wins: -1 } },
+    
+    // Keep only the top Pokémon
+    { $limit: 1 },
+    
+    // Join with Pokemon collection to retrieve name
+    {
+        $lookup: {
+            from: "Pokemon",
+            localField: "_id",
+            foreignField: "_id",
+            as: "pokemon"
+        }
+    },
+    
+    // Flatten lookup result
+    { $unwind: "$pokemon" },
+    
+    // Final clean output: ONLY the name and wins
+    {
+        $project: {
+            _id: 0,
+            pokemon_name: "$pokemon.name",
+            wins: 1
+        }
+    }
+]);
+
+// 12. Most powerful Pokémon (by total)
+db.Pokemon.aggregate([
+  { $project: { _id: 0, name: 1, tot: "$stats.tot" }},
+  { $sort: { tot: -1 }},
+  { $limit: 1 }
+]);
+
+// 13. Most powerful Pokémon (by type)
+db.Pokemon.aggregate([
+  // break out each type
+  { $unwind: "$types" },
+
+  // sort so $first selects the strongest per type
+  { $sort: { "stats.tot": -1 }},
+
+  // group by type ID
   {
     $group: {
-      _id: "$participants.winner.pokemon_id",
-      wins: { $sum: 1 }
+      _id: "$types",
+      pokemon: { $first: "$name" },
+      total:   { $first: "$stats.tot" }
     }
   },
 
-  // Sort by number of wins
-  { $sort: { wins: -1 } },
-
-  // Keep only the top Pokémon
-  { $limit: 1 },
-
-  // Join with Pokemon collection to retrieve name
+  // lookup type name
   {
     $lookup: {
-      from: "Pokemon",
+      from: "Type",
       localField: "_id",
       foreignField: "_id",
-      as: "pokemon"
+      as: "typeInfo"
     }
   },
 
-  // Flatten lookup result
-  { $unwind: "$pokemon" },
+  { $unwind: "$typeInfo" },
 
-  // Final clean output: ONLY the name and wins
+  // final clean output
   {
     $project: {
       _id: 0,
-      name: "$pokemon.name",
-      wins: 1
+      type: "$typeInfo.name",
+      pokemon: 1,
+      total: 1
     }
-  }
+  },
+
+  { $sort: { type: 1 } }
 ]);
