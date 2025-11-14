@@ -54,12 +54,12 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": "4"
+        "has_form": null
     },
     {
         "_id": "4",
         "pokedex": "0003",
-        "name": "Mega Venusaur",
+        "name": "Venusaur",
         "stats": {
             "hp": "80",
             "atk": "100",
@@ -73,7 +73,7 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Venusaur"
     },
     {
         "_id": "5",
@@ -128,12 +128,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "9"
+        "has_form": null
     },
     {
         "_id": "8",
         "pokedex": "0006",
-        "name": "Mega Charizard Y",
+        "name": "Charizard",
         "stats": {
             "hp": "78",
             "atk": "130",
@@ -147,12 +147,12 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Charizard X"
     },
     {
         "_id": "9",
         "pokedex": "0006",
-        "name": "Mega Charizard Y",
+        "name": "Charizard",
         "stats": {
             "hp": "78",
             "atk": "104",
@@ -166,7 +166,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Charizard Y"
     },
     {
         "_id": "10",
@@ -220,12 +220,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": "13"
+        "has_form": null
     },
     {
         "_id": "13",
         "pokedex": "0009",
-        "name": "Mega Blastoise",
+        "name": "Blastoise",
         "stats": {
             "hp": "79",
             "atk": "103",
@@ -238,7 +238,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Blastoise"
     },
     {
         "_id": "14",
@@ -350,12 +350,12 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": "20"
+        "has_form": null
     },
     {
         "_id": "20",
         "pokedex": "0015",
-        "name": "Mega Beedrill",
+        "name": "Beedrill",
         "stats": {
             "hp": "65",
             "atk": "150",
@@ -369,7 +369,7 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Beedrill"
     },
     {
         "_id": "21",
@@ -426,12 +426,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "24"
+        "has_form": null
     },
     {
         "_id": "24",
         "pokedex": "0018",
-        "name": "Mega Pidgeot",
+        "name": "Pidgeot",
         "stats": {
             "hp": "83",
             "atk": "80",
@@ -445,7 +445,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Pidgeot"
     },
     {
         "_id": "25",
@@ -463,12 +463,12 @@
             "7"
         ],
         "evolves_to": "27",
-        "has_form": "26"
+        "has_form": null
     },
     {
         "_id": "26",
         "pokedex": "0019",
-        "name": "Alolan Rattata",
+        "name": "Rattata",
         "stats": {
             "hp": "30",
             "atk": "56",
@@ -482,7 +482,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Rattata"
     },
     {
         "_id": "27",
@@ -500,12 +500,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "28"
+        "has_form": null
     },
     {
         "_id": "28",
         "pokedex": "0020",
-        "name": "Alolan Raticate",
+        "name": "Raticate",
         "stats": {
             "hp": "75",
             "atk": "71",
@@ -519,7 +519,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Raticate"
     },
     {
         "_id": "29",
@@ -611,12 +611,12 @@
             "8"
         ],
         "evolves_to": "35",
-        "has_form": "34"
+        "has_form": null
     },
     {
         "_id": "34",
         "pokedex": "0025",
-        "name": "Partner Pikachu",
+        "name": "Pikachu",
         "stats": {
             "hp": "45",
             "atk": "80",
@@ -629,7 +629,7 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Partner Pikachu"
     },
     {
         "_id": "35",
@@ -647,12 +647,12 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": "36"
+        "has_form": null
     },
     {
         "_id": "36",
         "pokedex": "0026",
-        "name": "Alolan Raichu",
+        "name": "Raichu",
         "stats": {
             "hp": "60",
             "atk": "85",
@@ -666,7 +666,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Raichu"
     },
     {
         "_id": "37",
@@ -684,12 +684,12 @@
             "9"
         ],
         "evolves_to": "39",
-        "has_form": "38"
+        "has_form": null
     },
     {
         "_id": "38",
         "pokedex": "0027",
-        "name": "Alolan Sandshrew",
+        "name": "Sandshrew",
         "stats": {
             "hp": "50",
             "atk": "75",
@@ -703,7 +703,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Sandshrew"
     },
     {
         "_id": "39",
@@ -721,12 +721,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "40"
+        "has_form": null
     },
     {
         "_id": "40",
         "pokedex": "0028",
-        "name": "Alolan Sandslash",
+        "name": "Sandslash",
         "stats": {
             "hp": "75",
             "atk": "100",
@@ -740,7 +740,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Sandslash"
     },
     {
         "_id": "41",
@@ -904,12 +904,12 @@
             "3"
         ],
         "evolves_to": "51",
-        "has_form": "50"
+        "has_form": null
     },
     {
         "_id": "50",
         "pokedex": "0037",
-        "name": "Alolan Vulpix",
+        "name": "Vulpix",
         "stats": {
             "hp": "38",
             "atk": "41",
@@ -922,7 +922,7 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Vulpix"
     },
     {
         "_id": "51",
@@ -940,12 +940,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": "52"
+        "has_form": null
     },
     {
         "_id": "52",
         "pokedex": "0038",
-        "name": "Alolan Ninetales",
+        "name": "Ninetales",
         "stats": {
             "hp": "73",
             "atk": "67",
@@ -959,7 +959,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Ninetales"
     },
     {
         "_id": "53",
@@ -1186,12 +1186,12 @@
             "9"
         ],
         "evolves_to": "66",
-        "has_form": "65"
+        "has_form": null
     },
     {
         "_id": "65",
         "pokedex": "0050",
-        "name": "Alolan Diglett",
+        "name": "Diglett",
         "stats": {
             "hp": "10",
             "atk": "55",
@@ -1205,7 +1205,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Diglett"
     },
     {
         "_id": "66",
@@ -1223,12 +1223,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "67"
+        "has_form": null
     },
     {
         "_id": "67",
         "pokedex": "0051",
-        "name": "Alolan Dugtrio",
+        "name": "Dugtrio",
         "stats": {
             "hp": "35",
             "atk": "100",
@@ -1242,7 +1242,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Dugtrio"
     },
     {
         "_id": "68",
@@ -1260,12 +1260,12 @@
             "7"
         ],
         "evolves_to": "71",
-        "has_form": "70"
+        "has_form": null
     },
     {
         "_id": "69",
         "pokedex": "0052",
-        "name": "Galarian Meowth",
+        "name": "Meowth",
         "stats": {
             "hp": "40",
             "atk": "35",
@@ -1278,12 +1278,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Meowth"
     },
     {
         "_id": "70",
         "pokedex": "0052",
-        "name": "Galarian Meowth",
+        "name": "Meowth",
         "stats": {
             "hp": "50",
             "atk": "65",
@@ -1296,7 +1296,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Meowth"
     },
     {
         "_id": "71",
@@ -1314,12 +1314,12 @@
             "7"
         ],
         "evolves_to": "1026",
-        "has_form": "72"
+        "has_form": null
     },
     {
         "_id": "72",
         "pokedex": "0053",
-        "name": "Alolan Persian",
+        "name": "Persian",
         "stats": {
             "hp": "65",
             "atk": "60",
@@ -1332,7 +1332,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Persian"
     },
     {
         "_id": "73",
@@ -1422,12 +1422,12 @@
             "3"
         ],
         "evolves_to": "79",
-        "has_form": "78"
+        "has_form": null
     },
     {
         "_id": "78",
         "pokedex": "0058",
-        "name": "Hisuian Growlithe",
+        "name": "Growlithe",
         "stats": {
             "hp": "60",
             "atk": "75",
@@ -1441,7 +1441,7 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Growlithe"
     },
     {
         "_id": "79",
@@ -1459,12 +1459,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": "80"
+        "has_form": null
     },
     {
         "_id": "80",
         "pokedex": "0059",
-        "name": "Hisuian Arcanine",
+        "name": "Arcanine",
         "stats": {
             "hp": "95",
             "atk": "115",
@@ -1478,7 +1478,7 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Arcanine"
     },
     {
         "_id": "81",
@@ -1587,12 +1587,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "87"
+        "has_form": null
     },
     {
         "_id": "87",
         "pokedex": "0065",
-        "name": "Mega Alakazam",
+        "name": "Alakazam",
         "stats": {
             "hp": "55",
             "atk": "50",
@@ -1605,7 +1605,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Alakazam"
     },
     {
         "_id": "88",
@@ -1773,12 +1773,12 @@
             "9"
         ],
         "evolves_to": "98",
-        "has_form": "97"
+        "has_form": null
     },
     {
         "_id": "97",
         "pokedex": "0074",
-        "name": "Alolan Geodude",
+        "name": "Geodude",
         "stats": {
             "hp": "40",
             "atk": "80",
@@ -1792,7 +1792,7 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Geodude"
     },
     {
         "_id": "98",
@@ -1811,12 +1811,12 @@
             "9"
         ],
         "evolves_to": "100",
-        "has_form": "99"
+        "has_form": null
     },
     {
         "_id": "99",
         "pokedex": "0075",
-        "name": "Alolan Graveler",
+        "name": "Graveler",
         "stats": {
             "hp": "55",
             "atk": "95",
@@ -1830,7 +1830,7 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Graveler"
     },
     {
         "_id": "100",
@@ -1849,12 +1849,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "101"
+        "has_form": null
     },
     {
         "_id": "101",
         "pokedex": "0076",
-        "name": "Alolan Golem",
+        "name": "Golem",
         "stats": {
             "hp": "80",
             "atk": "120",
@@ -1868,7 +1868,7 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Golem"
     },
     {
         "_id": "102",
@@ -1886,12 +1886,12 @@
             "3"
         ],
         "evolves_to": "104",
-        "has_form": "103"
+        "has_form": null
     },
     {
         "_id": "103",
         "pokedex": "0077",
-        "name": "Galarian Ponyta",
+        "name": "Ponyta",
         "stats": {
             "hp": "50",
             "atk": "85",
@@ -1904,7 +1904,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Ponyta"
     },
     {
         "_id": "104",
@@ -1922,12 +1922,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": "105"
+        "has_form": null
     },
     {
         "_id": "105",
         "pokedex": "0078",
-        "name": "Galarian Rapidash",
+        "name": "Rapidash",
         "stats": {
             "hp": "65",
             "atk": "100",
@@ -1941,7 +1941,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Rapidash"
     },
     {
         "_id": "106",
@@ -1960,12 +1960,12 @@
             "12"
         ],
         "evolves_to": "108",
-        "has_form": "107"
+        "has_form": null
     },
     {
         "_id": "107",
         "pokedex": "0079",
-        "name": "Galarian Slowpoke",
+        "name": "Slowpoke",
         "stats": {
             "hp": "90",
             "atk": "65",
@@ -1978,7 +1978,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Slowpoke"
     },
     {
         "_id": "108",
@@ -1997,12 +1997,12 @@
             "12"
         ],
         "evolves_to": "255",
-        "has_form": "110"
+        "has_form": null
     },
     {
         "_id": "109",
         "pokedex": "0080",
-        "name": "Galarian Slowbro",
+        "name": "Slowbro",
         "stats": {
             "hp": "95",
             "atk": "75",
@@ -2016,12 +2016,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Slowbro"
     },
     {
         "_id": "110",
         "pokedex": "0080",
-        "name": "Galarian Slowbro",
+        "name": "Slowbro",
         "stats": {
             "hp": "95",
             "atk": "100",
@@ -2035,7 +2035,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Slowbro"
     },
     {
         "_id": "111",
@@ -2092,12 +2092,12 @@
             "4"
         ],
         "evolves_to": "1028",
-        "has_form": "114"
+        "has_form": null
     },
     {
         "_id": "114",
         "pokedex": "0083",
-        "name": "Galarian Farfetch'd",
+        "name": "Farfetch'd",
         "stats": {
             "hp": "52",
             "atk": "95",
@@ -2110,7 +2110,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Farfetch'd"
     },
     {
         "_id": "115",
@@ -2203,12 +2203,12 @@
             "2"
         ],
         "evolves_to": "121",
-        "has_form": "120"
+        "has_form": null
     },
     {
         "_id": "120",
         "pokedex": "0088",
-        "name": "Alolan Grimer",
+        "name": "Grimer",
         "stats": {
             "hp": "80",
             "atk": "80",
@@ -2222,7 +2222,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Grimer"
     },
     {
         "_id": "121",
@@ -2240,12 +2240,12 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": "122"
+        "has_form": null
     },
     {
         "_id": "122",
         "pokedex": "0089",
-        "name": "Alolan Muk",
+        "name": "Muk",
         "stats": {
             "hp": "105",
             "atk": "105",
@@ -2259,7 +2259,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Muk"
     },
     {
         "_id": "123",
@@ -2353,12 +2353,12 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": "128"
+        "has_form": null
     },
     {
         "_id": "128",
         "pokedex": "0094",
-        "name": "Mega Gengar",
+        "name": "Gengar",
         "stats": {
             "hp": "60",
             "atk": "65",
@@ -2372,7 +2372,7 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Gengar"
     },
     {
         "_id": "129",
@@ -2481,12 +2481,12 @@
             "8"
         ],
         "evolves_to": "136",
-        "has_form": "135"
+        "has_form": null
     },
     {
         "_id": "135",
         "pokedex": "0100",
-        "name": "Hisuian Voltorb",
+        "name": "Voltorb",
         "stats": {
             "hp": "40",
             "atk": "30",
@@ -2500,7 +2500,7 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Voltorb"
     },
     {
         "_id": "136",
@@ -2518,12 +2518,12 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": "137"
+        "has_form": null
     },
     {
         "_id": "137",
         "pokedex": "0101",
-        "name": "Hisuian Electrode",
+        "name": "Electrode",
         "stats": {
             "hp": "60",
             "atk": "50",
@@ -2537,7 +2537,7 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Electrode"
     },
     {
         "_id": "138",
@@ -2575,12 +2575,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "140"
+        "has_form": null
     },
     {
         "_id": "140",
         "pokedex": "0103",
-        "name": "Alolan Exeggutor",
+        "name": "Exeggutor",
         "stats": {
             "hp": "95",
             "atk": "105",
@@ -2594,7 +2594,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Exeggutor"
     },
     {
         "_id": "141",
@@ -2630,12 +2630,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "143"
+        "has_form": null
     },
     {
         "_id": "143",
         "pokedex": "0105",
-        "name": "Alolan Marowak",
+        "name": "Marowak",
         "stats": {
             "hp": "60",
             "atk": "80",
@@ -2649,7 +2649,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Alolan Marowak"
     },
     {
         "_id": "144",
@@ -2739,12 +2739,12 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": "149"
+        "has_form": null
     },
     {
         "_id": "149",
         "pokedex": "0110",
-        "name": "Galarian Weezing",
+        "name": "Weezing",
         "stats": {
             "hp": "65",
             "atk": "90",
@@ -2758,7 +2758,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Weezing"
     },
     {
         "_id": "150",
@@ -2850,12 +2850,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "155"
+        "has_form": null
     },
     {
         "_id": "155",
         "pokedex": "0115",
-        "name": "Mega Kangaskhan",
+        "name": "Kangaskhan",
         "stats": {
             "hp": "105",
             "atk": "125",
@@ -2868,7 +2868,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Kangaskhan"
     },
     {
         "_id": "156",
@@ -2996,12 +2996,12 @@
             "10"
         ],
         "evolves_to": "1029",
-        "has_form": "163"
+        "has_form": null
     },
     {
         "_id": "163",
         "pokedex": "0122",
-        "name": "Galarian Mr. Mime",
+        "name": "Mr. Mime",
         "stats": {
             "hp": "50",
             "atk": "65",
@@ -3015,7 +3015,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Mr. Mime"
     },
     {
         "_id": "164",
@@ -3107,12 +3107,12 @@
             "6"
         ],
         "evolves_to": null,
-        "has_form": "169"
+        "has_form": null
     },
     {
         "_id": "169",
         "pokedex": "0127",
-        "name": "Mega Pinsir",
+        "name": "Pinsir",
         "stats": {
             "hp": "65",
             "atk": "155",
@@ -3126,7 +3126,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Pinsir"
     },
     {
         "_id": "170",
@@ -3144,12 +3144,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "173"
+        "has_form": null
     },
     {
         "_id": "171",
         "pokedex": "0128",
-        "name": "Aqua Breed",
+        "name": "Tauros",
         "stats": {
             "hp": "75",
             "atk": "110",
@@ -3162,12 +3162,12 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Combat Breed"
     },
     {
         "_id": "172",
         "pokedex": "0128",
-        "name": "Aqua Breed",
+        "name": "Tauros",
         "stats": {
             "hp": "75",
             "atk": "110",
@@ -3181,12 +3181,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Blaze Breed"
     },
     {
         "_id": "173",
         "pokedex": "0128",
-        "name": "Aqua Breed",
+        "name": "Tauros",
         "stats": {
             "hp": "75",
             "atk": "110",
@@ -3200,7 +3200,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Aqua Breed"
     },
     {
         "_id": "174",
@@ -3237,12 +3237,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "176"
+        "has_form": null
     },
     {
         "_id": "176",
         "pokedex": "0130",
-        "name": "Mega Gyarados",
+        "name": "Gyarados",
         "stats": {
             "hp": "95",
             "atk": "155",
@@ -3256,7 +3256,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Gyarados"
     },
     {
         "_id": "177",
@@ -3311,12 +3311,12 @@
             "7"
         ],
         "evolves_to": "181",
-        "has_form": "180"
+        "has_form": null
     },
     {
         "_id": "180",
         "pokedex": "0133",
-        "name": "Partner Eevee",
+        "name": "Eevee",
         "stats": {
             "hp": "65",
             "atk": "75",
@@ -3329,7 +3329,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Partner Eevee"
     },
     {
         "_id": "181",
@@ -3496,12 +3496,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "190"
+        "has_form": null
     },
     {
         "_id": "190",
         "pokedex": "0142",
-        "name": "Mega Aerodactyl",
+        "name": "Aerodactyl",
         "stats": {
             "hp": "80",
             "atk": "135",
@@ -3515,7 +3515,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Aerodactyl"
     },
     {
         "_id": "191",
@@ -3552,12 +3552,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "193"
+        "has_form": null
     },
     {
         "_id": "193",
         "pokedex": "0144",
-        "name": "Galarian Articuno",
+        "name": "Articuno",
         "stats": {
             "hp": "90",
             "atk": "85",
@@ -3571,7 +3571,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Articuno"
     },
     {
         "_id": "194",
@@ -3590,12 +3590,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "195"
+        "has_form": null
     },
     {
         "_id": "195",
         "pokedex": "0145",
-        "name": "Galarian Zapdos",
+        "name": "Zapdos",
         "stats": {
             "hp": "90",
             "atk": "125",
@@ -3609,7 +3609,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Zapdos"
     },
     {
         "_id": "196",
@@ -3628,12 +3628,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "197"
+        "has_form": null
     },
     {
         "_id": "197",
         "pokedex": "0146",
-        "name": "Galarian Moltres",
+        "name": "Moltres",
         "stats": {
             "hp": "90",
             "atk": "85",
@@ -3647,7 +3647,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Moltres"
     },
     {
         "_id": "198",
@@ -3720,12 +3720,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "203"
+        "has_form": null
     },
     {
         "_id": "202",
         "pokedex": "0150",
-        "name": "Mega Mewtwo Y",
+        "name": "Mewtwo",
         "stats": {
             "hp": "106",
             "atk": "190",
@@ -3739,12 +3739,12 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Mewtwo X"
     },
     {
         "_id": "203",
         "pokedex": "0150",
-        "name": "Mega Mewtwo Y",
+        "name": "Mewtwo",
         "stats": {
             "hp": "106",
             "atk": "150",
@@ -3757,7 +3757,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Mewtwo Y"
     },
     {
         "_id": "204",
@@ -3883,12 +3883,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": "211"
+        "has_form": null
     },
     {
         "_id": "211",
         "pokedex": "0157",
-        "name": "Hisuian Typhlosion",
+        "name": "Typhlosion",
         "stats": {
             "hp": "73",
             "atk": "84",
@@ -3902,7 +3902,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Typhlosion"
     },
     {
         "_id": "212",
@@ -4347,12 +4347,12 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": "236"
+        "has_form": null
     },
     {
         "_id": "236",
         "pokedex": "0181",
-        "name": "Mega Ampharos",
+        "name": "Ampharos",
         "stats": {
             "hp": "90",
             "atk": "95",
@@ -4366,7 +4366,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Ampharos"
     },
     {
         "_id": "237",
@@ -4607,12 +4607,12 @@
             "9"
         ],
         "evolves_to": "251",
-        "has_form": "250"
+        "has_form": null
     },
     {
         "_id": "250",
         "pokedex": "0194",
-        "name": "Paldean Wooper",
+        "name": "Wooper",
         "stats": {
             "hp": "55",
             "atk": "45",
@@ -4626,7 +4626,7 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Paldean Wooper"
     },
     {
         "_id": "251",
@@ -4719,12 +4719,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "256"
+        "has_form": null
     },
     {
         "_id": "256",
         "pokedex": "0199",
-        "name": "Galarian Slowking",
+        "name": "Slowking",
         "stats": {
             "hp": "95",
             "atk": "65",
@@ -4738,7 +4738,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Slowking"
     },
     {
         "_id": "257",
@@ -4904,12 +4904,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "266"
+        "has_form": null
     },
     {
         "_id": "266",
         "pokedex": "0208",
-        "name": "Mega Steelix",
+        "name": "Steelix",
         "stats": {
             "hp": "75",
             "atk": "125",
@@ -4923,7 +4923,7 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Steelix"
     },
     {
         "_id": "267",
@@ -4978,12 +4978,12 @@
             "2"
         ],
         "evolves_to": "1078",
-        "has_form": "270"
+        "has_form": null
     },
     {
         "_id": "270",
         "pokedex": "0211",
-        "name": "Hisuian Qwilfish",
+        "name": "Qwilfish",
         "stats": {
             "hp": "65",
             "atk": "95",
@@ -4997,7 +4997,7 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Qwilfish"
     },
     {
         "_id": "271",
@@ -5016,12 +5016,12 @@
             "14"
         ],
         "evolves_to": "1072",
-        "has_form": "272"
+        "has_form": null
     },
     {
         "_id": "272",
         "pokedex": "0212",
-        "name": "Mega Scizor",
+        "name": "Scizor",
         "stats": {
             "hp": "70",
             "atk": "150",
@@ -5035,7 +5035,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Scizor"
     },
     {
         "_id": "273",
@@ -5073,12 +5073,12 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": "275"
+        "has_form": null
     },
     {
         "_id": "275",
         "pokedex": "0214",
-        "name": "Mega Heracross",
+        "name": "Heracross",
         "stats": {
             "hp": "80",
             "atk": "185",
@@ -5092,7 +5092,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Heracross"
     },
     {
         "_id": "276",
@@ -5111,12 +5111,12 @@
             "15"
         ],
         "evolves_to": "564",
-        "has_form": "277"
+        "has_form": null
     },
     {
         "_id": "277",
         "pokedex": "0215",
-        "name": "Hisuian Sneasel",
+        "name": "Sneasel",
         "stats": {
             "hp": "55",
             "atk": "95",
@@ -5130,7 +5130,7 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Sneasel"
     },
     {
         "_id": "278",
@@ -5260,12 +5260,12 @@
             "13"
         ],
         "evolves_to": "1027",
-        "has_form": "285"
+        "has_form": null
     },
     {
         "_id": "285",
         "pokedex": "0222",
-        "name": "Galarian Corsola",
+        "name": "Corsola",
         "stats": {
             "hp": "60",
             "atk": "55",
@@ -5278,7 +5278,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Corsola"
     },
     {
         "_id": "286",
@@ -5409,12 +5409,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": "293"
+        "has_form": null
     },
     {
         "_id": "293",
         "pokedex": "0229",
-        "name": "Mega Houndoom",
+        "name": "Houndoom",
         "stats": {
             "hp": "75",
             "atk": "90",
@@ -5428,7 +5428,7 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Houndoom"
     },
     {
         "_id": "294",
@@ -5775,12 +5775,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": "313"
+        "has_form": null
     },
     {
         "_id": "313",
         "pokedex": "0248",
-        "name": "Mega Tyranitar",
+        "name": "Tyranitar",
         "stats": {
             "hp": "100",
             "atk": "164",
@@ -5794,7 +5794,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Tyranitar"
     },
     {
         "_id": "314",
@@ -5905,12 +5905,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": "320"
+        "has_form": null
     },
     {
         "_id": "320",
         "pokedex": "0254",
-        "name": "Mega Sceptile",
+        "name": "Sceptile",
         "stats": {
             "hp": "70",
             "atk": "110",
@@ -5924,7 +5924,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Sceptile"
     },
     {
         "_id": "321",
@@ -5980,12 +5980,12 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": "324"
+        "has_form": null
     },
     {
         "_id": "324",
         "pokedex": "0257",
-        "name": "Mega Blaziken",
+        "name": "Blaziken",
         "stats": {
             "hp": "80",
             "atk": "160",
@@ -5999,7 +5999,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Blaziken"
     },
     {
         "_id": "325",
@@ -6055,12 +6055,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "328"
+        "has_form": null
     },
     {
         "_id": "328",
         "pokedex": "0260",
-        "name": "Mega Swampert",
+        "name": "Swampert",
         "stats": {
             "hp": "100",
             "atk": "150",
@@ -6074,7 +6074,7 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Swampert"
     },
     {
         "_id": "329",
@@ -6128,12 +6128,12 @@
             "7"
         ],
         "evolves_to": "333",
-        "has_form": "332"
+        "has_form": null
     },
     {
         "_id": "332",
         "pokedex": "0263",
-        "name": "Galarian Zigzagoon",
+        "name": "Zigzagoon",
         "stats": {
             "hp": "38",
             "atk": "30",
@@ -6147,7 +6147,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Zigzagoon"
     },
     {
         "_id": "333",
@@ -6165,12 +6165,12 @@
             "7"
         ],
         "evolves_to": "1025",
-        "has_form": "334"
+        "has_form": null
     },
     {
         "_id": "334",
         "pokedex": "0264",
-        "name": "Galarian Linoone",
+        "name": "Linoone",
         "stats": {
             "hp": "78",
             "atk": "70",
@@ -6184,7 +6184,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Linoone"
     },
     {
         "_id": "335",
@@ -6522,12 +6522,12 @@
             "10"
         ],
         "evolves_to": "578",
-        "has_form": "353"
+        "has_form": null
     },
     {
         "_id": "353",
         "pokedex": "0282",
-        "name": "Mega Gardevoir",
+        "name": "Gardevoir",
         "stats": {
             "hp": "68",
             "atk": "85",
@@ -6541,7 +6541,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Gardevoir"
     },
     {
         "_id": "354",
@@ -6909,12 +6909,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": "374"
+        "has_form": null
     },
     {
         "_id": "374",
         "pokedex": "0302",
-        "name": "Mega Sableye",
+        "name": "Sableye",
         "stats": {
             "hp": "50",
             "atk": "85",
@@ -6928,7 +6928,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Sableye"
     },
     {
         "_id": "375",
@@ -6947,12 +6947,12 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": "376"
+        "has_form": null
     },
     {
         "_id": "376",
         "pokedex": "0303",
-        "name": "Mega Mawile",
+        "name": "Mawile",
         "stats": {
             "hp": "50",
             "atk": "105",
@@ -6966,7 +6966,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Mawile"
     },
     {
         "_id": "377",
@@ -7023,12 +7023,12 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": "380"
+        "has_form": null
     },
     {
         "_id": "380",
         "pokedex": "0306",
-        "name": "Mega Aggron",
+        "name": "Aggron",
         "stats": {
             "hp": "70",
             "atk": "140",
@@ -7041,7 +7041,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Aggron"
     },
     {
         "_id": "381",
@@ -7079,12 +7079,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "383"
+        "has_form": null
     },
     {
         "_id": "383",
         "pokedex": "0308",
-        "name": "Mega Medicham",
+        "name": "Medicham",
         "stats": {
             "hp": "60",
             "atk": "100",
@@ -7098,7 +7098,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Medicham"
     },
     {
         "_id": "384",
@@ -7134,12 +7134,12 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": "386"
+        "has_form": null
     },
     {
         "_id": "386",
         "pokedex": "0310",
-        "name": "Mega Manectric",
+        "name": "Manectric",
         "stats": {
             "hp": "70",
             "atk": "75",
@@ -7152,7 +7152,7 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Manectric"
     },
     {
         "_id": "387",
@@ -7317,12 +7317,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": "396"
+        "has_form": null
     },
     {
         "_id": "396",
         "pokedex": "0319",
-        "name": "Mega Sharpedo",
+        "name": "Sharpedo",
         "stats": {
             "hp": "70",
             "atk": "140",
@@ -7336,7 +7336,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Sharpedo"
     },
     {
         "_id": "397",
@@ -7410,12 +7410,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "401"
+        "has_form": null
     },
     {
         "_id": "401",
         "pokedex": "0323",
-        "name": "Mega Camerupt",
+        "name": "Camerupt",
         "stats": {
             "hp": "70",
             "atk": "120",
@@ -7429,7 +7429,7 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Camerupt"
     },
     {
         "_id": "402",
@@ -7632,12 +7632,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "413"
+        "has_form": null
     },
     {
         "_id": "413",
         "pokedex": "0334",
-        "name": "Mega Altaria",
+        "name": "Altaria",
         "stats": {
             "hp": "75",
             "atk": "110",
@@ -7651,7 +7651,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Altaria"
     },
     {
         "_id": "414",
@@ -7968,12 +7968,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "433"
+        "has_form": null
     },
     {
         "_id": "431",
         "pokedex": "0351",
-        "name": "Snowy Form",
+        "name": "Castform",
         "stats": {
             "hp": "70",
             "atk": "70",
@@ -7986,12 +7986,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Sunny Form"
     },
     {
         "_id": "432",
         "pokedex": "0351",
-        "name": "Snowy Form",
+        "name": "Castform",
         "stats": {
             "hp": "70",
             "atk": "70",
@@ -8004,12 +8004,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Rainy Form"
     },
     {
         "_id": "433",
         "pokedex": "0351",
-        "name": "Snowy Form",
+        "name": "Castform",
         "stats": {
             "hp": "70",
             "atk": "70",
@@ -8022,7 +8022,7 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Snowy Form"
     },
     {
         "_id": "434",
@@ -8076,12 +8076,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": "437"
+        "has_form": null
     },
     {
         "_id": "437",
         "pokedex": "0354",
-        "name": "Mega Banette",
+        "name": "Banette",
         "stats": {
             "hp": "64",
             "atk": "165",
@@ -8094,7 +8094,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Banette"
     },
     {
         "_id": "438",
@@ -8185,12 +8185,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": "443"
+        "has_form": null
     },
     {
         "_id": "443",
         "pokedex": "0359",
-        "name": "Mega Absol",
+        "name": "Absol",
         "stats": {
             "hp": "65",
             "atk": "150",
@@ -8203,7 +8203,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Absol"
     },
     {
         "_id": "444",
@@ -8257,12 +8257,12 @@
             "15"
         ],
         "evolves_to": "582",
-        "has_form": "447"
+        "has_form": null
     },
     {
         "_id": "447",
         "pokedex": "0362",
-        "name": "Mega Glalie",
+        "name": "Glalie",
         "stats": {
             "hp": "80",
             "atk": "120",
@@ -8275,7 +8275,7 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Glalie"
     },
     {
         "_id": "448",
@@ -8478,12 +8478,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "459"
+        "has_form": null
     },
     {
         "_id": "459",
         "pokedex": "0373",
-        "name": "Mega Salamence",
+        "name": "Salamence",
         "stats": {
             "hp": "95",
             "atk": "145",
@@ -8497,7 +8497,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Salamence"
     },
     {
         "_id": "460",
@@ -8554,12 +8554,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "463"
+        "has_form": null
     },
     {
         "_id": "463",
         "pokedex": "0376",
-        "name": "Mega Metagross",
+        "name": "Metagross",
         "stats": {
             "hp": "80",
             "atk": "145",
@@ -8573,7 +8573,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Metagross"
     },
     {
         "_id": "464",
@@ -8646,12 +8646,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "468"
+        "has_form": null
     },
     {
         "_id": "468",
         "pokedex": "0380",
-        "name": "Mega Latias",
+        "name": "Latias",
         "stats": {
             "hp": "80",
             "atk": "100",
@@ -8665,7 +8665,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Latias"
     },
     {
         "_id": "469",
@@ -8684,12 +8684,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "470"
+        "has_form": null
     },
     {
         "_id": "470",
         "pokedex": "0381",
-        "name": "Mega Latios",
+        "name": "Latios",
         "stats": {
             "hp": "80",
             "atk": "130",
@@ -8703,7 +8703,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Latios"
     },
     {
         "_id": "471",
@@ -8721,12 +8721,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": "472"
+        "has_form": null
     },
     {
         "_id": "472",
         "pokedex": "0382",
-        "name": "Primal Kyogre",
+        "name": "Kyogre",
         "stats": {
             "hp": "100",
             "atk": "150",
@@ -8739,7 +8739,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Primal Kyogre"
     },
     {
         "_id": "473",
@@ -8757,12 +8757,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "474"
+        "has_form": null
     },
     {
         "_id": "474",
         "pokedex": "0383",
-        "name": "Primal Groudon",
+        "name": "Groudon",
         "stats": {
             "hp": "100",
             "atk": "180",
@@ -8776,7 +8776,7 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Primal Groudon"
     },
     {
         "_id": "475",
@@ -8795,12 +8795,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "476"
+        "has_form": null
     },
     {
         "_id": "476",
         "pokedex": "0384",
-        "name": "Mega Rayquaza",
+        "name": "Rayquaza",
         "stats": {
             "hp": "105",
             "atk": "180",
@@ -8814,7 +8814,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Rayquaza"
     },
     {
         "_id": "477",
@@ -8851,12 +8851,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "481"
+        "has_form": "Normal Forme"
     },
     {
         "_id": "479",
         "pokedex": "0386",
-        "name": "Speed Forme",
+        "name": "Deoxys",
         "stats": {
             "hp": "50",
             "atk": "180",
@@ -8869,12 +8869,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Attack Forme"
     },
     {
         "_id": "480",
         "pokedex": "0386",
-        "name": "Speed Forme",
+        "name": "Deoxys",
         "stats": {
             "hp": "50",
             "atk": "70",
@@ -8887,12 +8887,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Defense Forme"
     },
     {
         "_id": "481",
         "pokedex": "0386",
-        "name": "Speed Forme",
+        "name": "Deoxys",
         "stats": {
             "hp": "50",
             "atk": "95",
@@ -8905,7 +8905,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Speed Forme"
     },
     {
         "_id": "482",
@@ -9385,12 +9385,12 @@
             "6"
         ],
         "evolves_to": "510",
-        "has_form": "509"
+        "has_form": "Plant Cloak"
     },
     {
         "_id": "508",
         "pokedex": "0412",
-        "name": "Trash Cloak",
+        "name": "Burmy",
         "stats": {
             "hp": "40",
             "atk": "29",
@@ -9403,12 +9403,12 @@
             "6"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Sandy Cloak"
     },
     {
         "_id": "509",
         "pokedex": "0412",
-        "name": "Trash Cloak",
+        "name": "Burmy",
         "stats": {
             "hp": "40",
             "atk": "29",
@@ -9421,7 +9421,7 @@
             "6"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Trash Cloak"
     },
     {
         "_id": "510",
@@ -9440,12 +9440,12 @@
             "1"
         ],
         "evolves_to": "513",
-        "has_form": "512"
+        "has_form": "Plant Cloak"
     },
     {
         "_id": "511",
         "pokedex": "0413",
-        "name": "Trash Cloak",
+        "name": "Wormadam",
         "stats": {
             "hp": "60",
             "atk": "79",
@@ -9459,12 +9459,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Sandy Cloak"
     },
     {
         "_id": "512",
         "pokedex": "0413",
-        "name": "Trash Cloak",
+        "name": "Wormadam",
         "stats": {
             "hp": "60",
             "atk": "69",
@@ -9478,7 +9478,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Trash Cloak"
     },
     {
         "_id": "513",
@@ -9754,12 +9754,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "528"
+        "has_form": null
     },
     {
         "_id": "528",
         "pokedex": "0428",
-        "name": "Mega Lopunny",
+        "name": "Lopunny",
         "stats": {
             "hp": "65",
             "atk": "136",
@@ -9773,7 +9773,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Lopunny"
     },
     {
         "_id": "529",
@@ -10090,12 +10090,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "546"
+        "has_form": null
     },
     {
         "_id": "546",
         "pokedex": "0445",
-        "name": "Mega Garchomp",
+        "name": "Garchomp",
         "stats": {
             "hp": "108",
             "atk": "170",
@@ -10109,7 +10109,7 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Garchomp"
     },
     {
         "_id": "547",
@@ -10164,12 +10164,12 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": "550"
+        "has_form": null
     },
     {
         "_id": "550",
         "pokedex": "0448",
-        "name": "Mega Lucario",
+        "name": "Lucario",
         "stats": {
             "hp": "70",
             "atk": "145",
@@ -10183,7 +10183,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Lucario"
     },
     {
         "_id": "551",
@@ -10406,12 +10406,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": "563"
+        "has_form": null
     },
     {
         "_id": "563",
         "pokedex": "0460",
-        "name": "Mega Abomasnow",
+        "name": "Abomasnow",
         "stats": {
             "hp": "90",
             "atk": "132",
@@ -10425,7 +10425,7 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Abomasnow"
     },
     {
         "_id": "564",
@@ -10703,12 +10703,12 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": "579"
+        "has_form": null
     },
     {
         "_id": "579",
         "pokedex": "0475",
-        "name": "Mega Gallade",
+        "name": "Gallade",
         "stats": {
             "hp": "68",
             "atk": "165",
@@ -10722,7 +10722,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Gallade"
     },
     {
         "_id": "580",
@@ -10797,12 +10797,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": "588"
+        "has_form": null
     },
     {
         "_id": "584",
         "pokedex": "0479",
-        "name": "Mow Rotom",
+        "name": "Rotom",
         "stats": {
             "hp": "50",
             "atk": "65",
@@ -10816,12 +10816,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Heat Rotom"
     },
     {
         "_id": "585",
         "pokedex": "0479",
-        "name": "Mow Rotom",
+        "name": "Rotom",
         "stats": {
             "hp": "50",
             "atk": "65",
@@ -10835,12 +10835,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Wash Rotom"
     },
     {
         "_id": "586",
         "pokedex": "0479",
-        "name": "Mow Rotom",
+        "name": "Rotom",
         "stats": {
             "hp": "50",
             "atk": "65",
@@ -10854,12 +10854,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Frost Rotom"
     },
     {
         "_id": "587",
         "pokedex": "0479",
-        "name": "Mow Rotom",
+        "name": "Rotom",
         "stats": {
             "hp": "50",
             "atk": "65",
@@ -10873,12 +10873,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Fan Rotom"
     },
     {
         "_id": "588",
         "pokedex": "0479",
-        "name": "Mow Rotom",
+        "name": "Rotom",
         "stats": {
             "hp": "50",
             "atk": "65",
@@ -10892,7 +10892,7 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mow Rotom"
     },
     {
         "_id": "589",
@@ -10965,12 +10965,12 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": "593"
+        "has_form": null
     },
     {
         "_id": "593",
         "pokedex": "0483",
-        "name": "Origin Forme",
+        "name": "Dialga",
         "stats": {
             "hp": "100",
             "atk": "100",
@@ -10984,7 +10984,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Origin Forme"
     },
     {
         "_id": "594",
@@ -11003,12 +11003,12 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": "595"
+        "has_form": null
     },
     {
         "_id": "595",
         "pokedex": "0484",
-        "name": "Origin Forme",
+        "name": "Palkia",
         "stats": {
             "hp": "90",
             "atk": "100",
@@ -11022,7 +11022,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Origin Forme"
     },
     {
         "_id": "596",
@@ -11078,12 +11078,12 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": "599"
+        "has_form": "Altered Forme"
     },
     {
         "_id": "599",
         "pokedex": "0487",
-        "name": "Origin Forme",
+        "name": "Giratina",
         "stats": {
             "hp": "150",
             "atk": "120",
@@ -11097,7 +11097,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Origin Forme"
     },
     {
         "_id": "600",
@@ -11187,12 +11187,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": "605"
+        "has_form": "Land Forme"
     },
     {
         "_id": "605",
         "pokedex": "0492",
-        "name": "Sky Forme",
+        "name": "Shaymin",
         "stats": {
             "hp": "100",
             "atk": "103",
@@ -11206,7 +11206,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Sky Forme"
     },
     {
         "_id": "606",
@@ -11407,12 +11407,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": "617"
+        "has_form": null
     },
     {
         "_id": "617",
         "pokedex": "0503",
-        "name": "Hisuian Samurott",
+        "name": "Samurott",
         "stats": {
             "hp": "90",
             "atk": "108",
@@ -11426,7 +11426,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Samurott"
     },
     {
         "_id": "618",
@@ -11936,12 +11936,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "646"
+        "has_form": null
     },
     {
         "_id": "646",
         "pokedex": "0531",
-        "name": "Mega Audino",
+        "name": "Audino",
         "stats": {
             "hp": "103",
             "atk": "60",
@@ -11955,7 +11955,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Audino"
     },
     {
         "_id": "647",
@@ -12289,12 +12289,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": "665"
+        "has_form": null
     },
     {
         "_id": "665",
         "pokedex": "0549",
-        "name": "Hisuian Lilligant",
+        "name": "Lilligant",
         "stats": {
             "hp": "70",
             "atk": "105",
@@ -12308,7 +12308,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Lilligant"
     },
     {
         "_id": "666",
@@ -12326,12 +12326,12 @@
             "5"
         ],
         "evolves_to": "1075",
-        "has_form": "668"
+        "has_form": "Red-Striped Form"
     },
     {
         "_id": "667",
         "pokedex": "0550",
-        "name": "White-Striped Form",
+        "name": "Basculin",
         "stats": {
             "hp": "70",
             "atk": "92",
@@ -12344,12 +12344,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Blue-Striped Form"
     },
     {
         "_id": "668",
         "pokedex": "0550",
-        "name": "White-Striped Form",
+        "name": "Basculin",
         "stats": {
             "hp": "70",
             "atk": "92",
@@ -12362,7 +12362,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "White-Striped Form"
     },
     {
         "_id": "669",
@@ -12437,12 +12437,12 @@
             "3"
         ],
         "evolves_to": "674",
-        "has_form": "673"
+        "has_form": null
     },
     {
         "_id": "673",
         "pokedex": "0554",
-        "name": "Galarian Darumaka",
+        "name": "Darumaka",
         "stats": {
             "hp": "70",
             "atk": "90",
@@ -12455,7 +12455,7 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Darumaka"
     },
     {
         "_id": "674",
@@ -12473,12 +12473,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": "677"
+        "has_form": "Standard Mode"
     },
     {
         "_id": "675",
         "pokedex": "0555",
-        "name": "Galarian Zen Mode",
+        "name": "Darmanitan",
         "stats": {
             "hp": "105",
             "atk": "30",
@@ -12492,12 +12492,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Zen Mode"
     },
     {
         "_id": "676",
         "pokedex": "0555",
-        "name": "Galarian Zen Mode",
+        "name": "Darmanitan",
         "stats": {
             "hp": "105",
             "atk": "140",
@@ -12510,12 +12510,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Standard Mode"
     },
     {
         "_id": "677",
         "pokedex": "0555",
-        "name": "Galarian Zen Mode",
+        "name": "Darmanitan",
         "stats": {
             "hp": "105",
             "atk": "160",
@@ -12529,7 +12529,7 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Zen Mode"
     },
     {
         "_id": "678",
@@ -12660,12 +12660,12 @@
             "16"
         ],
         "evolves_to": "686",
-        "has_form": "685"
+        "has_form": null
     },
     {
         "_id": "685",
         "pokedex": "0562",
-        "name": "Galarian Yamask",
+        "name": "Yamask",
         "stats": {
             "hp": "38",
             "atk": "55",
@@ -12679,7 +12679,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Yamask"
     },
     {
         "_id": "686",
@@ -12827,12 +12827,12 @@
             "18"
         ],
         "evolves_to": "695",
-        "has_form": "694"
+        "has_form": null
     },
     {
         "_id": "694",
         "pokedex": "0570",
-        "name": "Hisuian Zorua",
+        "name": "Zorua",
         "stats": {
             "hp": "35",
             "atk": "60",
@@ -12846,7 +12846,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Zorua"
     },
     {
         "_id": "695",
@@ -12864,12 +12864,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": "696"
+        "has_form": null
     },
     {
         "_id": "696",
         "pokedex": "0571",
-        "name": "Hisuian Zoroark",
+        "name": "Zoroark",
         "stats": {
             "hp": "55",
             "atk": "100",
@@ -12883,7 +12883,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Zoroark"
     },
     {
         "_id": "697",
@@ -13747,12 +13747,12 @@
             "8"
         ],
         "evolves_to": null,
-        "has_form": "744"
+        "has_form": null
     },
     {
         "_id": "744",
         "pokedex": "0618",
-        "name": "Galarian Stunfisk",
+        "name": "Stunfisk",
         "stats": {
             "hp": "109",
             "atk": "81",
@@ -13766,7 +13766,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Galarian Stunfisk"
     },
     {
         "_id": "745",
@@ -13952,12 +13952,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "755"
+        "has_form": null
     },
     {
         "_id": "755",
         "pokedex": "0628",
-        "name": "Hisuian Braviary",
+        "name": "Braviary",
         "stats": {
             "hp": "110",
             "atk": "83",
@@ -13971,7 +13971,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Braviary"
     },
     {
         "_id": "756",
@@ -14216,12 +14216,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "769"
+        "has_form": "Incarnate Forme"
     },
     {
         "_id": "769",
         "pokedex": "0641",
-        "name": "Therian Forme",
+        "name": "Tornadus",
         "stats": {
             "hp": "79",
             "atk": "100",
@@ -14234,7 +14234,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Therian Forme"
     },
     {
         "_id": "770",
@@ -14253,12 +14253,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "771"
+        "has_form": "Incarnate Forme"
     },
     {
         "_id": "771",
         "pokedex": "0642",
-        "name": "Therian Forme",
+        "name": "Thundurus",
         "stats": {
             "hp": "79",
             "atk": "105",
@@ -14272,7 +14272,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Therian Forme"
     },
     {
         "_id": "772",
@@ -14329,12 +14329,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "775"
+        "has_form": "Incarnate Forme"
     },
     {
         "_id": "775",
         "pokedex": "0645",
-        "name": "Therian Forme",
+        "name": "Landorus",
         "stats": {
             "hp": "89",
             "atk": "145",
@@ -14348,7 +14348,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Therian Forme"
     },
     {
         "_id": "776",
@@ -14367,12 +14367,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": "778"
+        "has_form": null
     },
     {
         "_id": "777",
         "pokedex": "0646",
-        "name": "Black Kyurem",
+        "name": "Kyurem",
         "stats": {
             "hp": "125",
             "atk": "120",
@@ -14386,12 +14386,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "White Kyurem"
     },
     {
         "_id": "778",
         "pokedex": "0646",
-        "name": "Black Kyurem",
+        "name": "Kyurem",
         "stats": {
             "hp": "125",
             "atk": "170",
@@ -14405,7 +14405,7 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Black Kyurem"
     },
     {
         "_id": "779",
@@ -14424,12 +14424,12 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": "780"
+        "has_form": "Ordinary Form"
     },
     {
         "_id": "780",
         "pokedex": "0647",
-        "name": "Resolute Form",
+        "name": "Keldeo",
         "stats": {
             "hp": "91",
             "atk": "72",
@@ -14443,7 +14443,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Resolute Form"
     },
     {
         "_id": "781",
@@ -14462,12 +14462,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "782"
+        "has_form": "Aria Forme"
     },
     {
         "_id": "782",
         "pokedex": "0648",
-        "name": "Pirouette Forme",
+        "name": "Meloetta",
         "stats": {
             "hp": "100",
             "atk": "128",
@@ -14481,7 +14481,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Pirouette Forme"
     },
     {
         "_id": "783",
@@ -14665,12 +14665,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": "793"
+        "has_form": null
     },
     {
         "_id": "793",
         "pokedex": "0658",
-        "name": "Ash-Greninja",
+        "name": "Greninja",
         "stats": {
             "hp": "72",
             "atk": "145",
@@ -14684,7 +14684,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Ash-Greninja"
     },
     {
         "_id": "794",
@@ -15052,12 +15052,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "814"
+        "has_form": "Male"
     },
     {
         "_id": "814",
         "pokedex": "0678",
-        "name": "Female",
+        "name": "Meowstic",
         "stats": {
             "hp": "74",
             "atk": "48",
@@ -15070,7 +15070,7 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Female"
     },
     {
         "_id": "815",
@@ -15127,12 +15127,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": "818"
+        "has_form": "Shield Forme"
     },
     {
         "_id": "818",
         "pokedex": "0681",
-        "name": "Blade Forme",
+        "name": "Aegislash",
         "stats": {
             "hp": "60",
             "atk": "140",
@@ -15146,7 +15146,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Blade Forme"
     },
     {
         "_id": "819",
@@ -15593,12 +15593,12 @@
             "17"
         ],
         "evolves_to": "844",
-        "has_form": "843"
+        "has_form": null
     },
     {
         "_id": "843",
         "pokedex": "0705",
-        "name": "Hisuian Sliggoo",
+        "name": "Sliggoo",
         "stats": {
             "hp": "58",
             "atk": "75",
@@ -15612,7 +15612,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Sliggoo"
     },
     {
         "_id": "844",
@@ -15630,12 +15630,12 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": "845"
+        "has_form": null
     },
     {
         "_id": "845",
         "pokedex": "0706",
-        "name": "Hisuian Goodra",
+        "name": "Goodra",
         "stats": {
             "hp": "80",
             "atk": "100",
@@ -15649,7 +15649,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Goodra"
     },
     {
         "_id": "846",
@@ -15725,12 +15725,12 @@
             "1"
         ],
         "evolves_to": "853",
-        "has_form": "852"
+        "has_form": "Average Size"
     },
     {
         "_id": "850",
         "pokedex": "0710",
-        "name": "Super Size",
+        "name": "Pumpkaboo",
         "stats": {
             "hp": "44",
             "atk": "66",
@@ -15744,12 +15744,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Small Size"
     },
     {
         "_id": "851",
         "pokedex": "0710",
-        "name": "Super Size",
+        "name": "Pumpkaboo",
         "stats": {
             "hp": "54",
             "atk": "66",
@@ -15763,12 +15763,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Large Size"
     },
     {
         "_id": "852",
         "pokedex": "0710",
-        "name": "Super Size",
+        "name": "Pumpkaboo",
         "stats": {
             "hp": "59",
             "atk": "66",
@@ -15782,7 +15782,7 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Super Size"
     },
     {
         "_id": "853",
@@ -15801,12 +15801,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": "856"
+        "has_form": "Average Size"
     },
     {
         "_id": "854",
         "pokedex": "0711",
-        "name": "Super Size",
+        "name": "Gourgeist",
         "stats": {
             "hp": "55",
             "atk": "85",
@@ -15820,12 +15820,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Small Size"
     },
     {
         "_id": "855",
         "pokedex": "0711",
-        "name": "Super Size",
+        "name": "Gourgeist",
         "stats": {
             "hp": "75",
             "atk": "95",
@@ -15839,12 +15839,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Large Size"
     },
     {
         "_id": "856",
         "pokedex": "0711",
-        "name": "Super Size",
+        "name": "Gourgeist",
         "stats": {
             "hp": "85",
             "atk": "100",
@@ -15858,7 +15858,7 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Super Size"
     },
     {
         "_id": "857",
@@ -15894,12 +15894,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": "859"
+        "has_form": null
     },
     {
         "_id": "859",
         "pokedex": "0713",
-        "name": "Hisuian Avalugg",
+        "name": "Avalugg",
         "stats": {
             "hp": "95",
             "atk": "127",
@@ -15913,7 +15913,7 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Avalugg"
     },
     {
         "_id": "860",
@@ -16007,12 +16007,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": "866"
+        "has_form": "50% Forme"
     },
     {
         "_id": "865",
         "pokedex": "0718",
-        "name": "Complete Forme",
+        "name": "Zygarde",
         "stats": {
             "hp": "54",
             "atk": "100",
@@ -16026,12 +16026,12 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "10% Forme"
     },
     {
         "_id": "866",
         "pokedex": "0718",
-        "name": "Complete Forme",
+        "name": "Zygarde",
         "stats": {
             "hp": "216",
             "atk": "100",
@@ -16045,7 +16045,7 @@
             "9"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Complete Forme"
     },
     {
         "_id": "867",
@@ -16064,12 +16064,12 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": "868"
+        "has_form": null
     },
     {
         "_id": "868",
         "pokedex": "0719",
-        "name": "Mega Diancie",
+        "name": "Diancie",
         "stats": {
             "hp": "50",
             "atk": "160",
@@ -16083,7 +16083,7 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Mega Diancie"
     },
     {
         "_id": "869",
@@ -16102,12 +16102,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": "870"
+        "has_form": "Hoopa Confined"
     },
     {
         "_id": "870",
         "pokedex": "0720",
-        "name": "Hoopa Unbound",
+        "name": "Hoopa",
         "stats": {
             "hp": "80",
             "atk": "160",
@@ -16121,7 +16121,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hoopa Unbound"
     },
     {
         "_id": "871",
@@ -16197,12 +16197,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": "875"
+        "has_form": null
     },
     {
         "_id": "875",
         "pokedex": "0724",
-        "name": "Hisuian Decidueye",
+        "name": "Decidueye",
         "stats": {
             "hp": "88",
             "atk": "112",
@@ -16216,7 +16216,7 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hisuian Decidueye"
     },
     {
         "_id": "876",
@@ -16531,12 +16531,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "895"
+        "has_form": "Baile Style"
     },
     {
         "_id": "893",
         "pokedex": "0741",
-        "name": "Sensu Style",
+        "name": "Oricorio",
         "stats": {
             "hp": "75",
             "atk": "70",
@@ -16550,12 +16550,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Pom-Pom Style"
     },
     {
         "_id": "894",
         "pokedex": "0741",
-        "name": "Sensu Style",
+        "name": "Oricorio",
         "stats": {
             "hp": "75",
             "atk": "70",
@@ -16569,12 +16569,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Pa'u Style"
     },
     {
         "_id": "895",
         "pokedex": "0741",
-        "name": "Sensu Style",
+        "name": "Oricorio",
         "stats": {
             "hp": "75",
             "atk": "70",
@@ -16588,7 +16588,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Sensu Style"
     },
     {
         "_id": "896",
@@ -16644,12 +16644,12 @@
             "13"
         ],
         "evolves_to": "900",
-        "has_form": "899"
+        "has_form": null
     },
     {
         "_id": "899",
         "pokedex": "0744",
-        "name": "Own Tempo Rockruff",
+        "name": "Rockruff",
         "stats": {
             "hp": "45",
             "atk": "65",
@@ -16662,7 +16662,7 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Own Tempo Rockruff"
     },
     {
         "_id": "900",
@@ -16680,12 +16680,12 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": "902"
+        "has_form": "Midday Form"
     },
     {
         "_id": "901",
         "pokedex": "0745",
-        "name": "Dusk Form",
+        "name": "Lycanroc",
         "stats": {
             "hp": "85",
             "atk": "115",
@@ -16698,12 +16698,12 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Midnight Form"
     },
     {
         "_id": "902",
         "pokedex": "0745",
-        "name": "Dusk Form",
+        "name": "Lycanroc",
         "stats": {
             "hp": "75",
             "atk": "117",
@@ -16716,7 +16716,7 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Dusk Form"
     },
     {
         "_id": "903",
@@ -16734,12 +16734,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": "904"
+        "has_form": "Solo Form"
     },
     {
         "_id": "904",
         "pokedex": "0746",
-        "name": "School Form",
+        "name": "Wishiwashi",
         "stats": {
             "hp": "45",
             "atk": "140",
@@ -16752,7 +16752,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "School Form"
     },
     {
         "_id": "905",
@@ -17272,12 +17272,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "933"
+        "has_form": "Meteor Form"
     },
     {
         "_id": "933",
         "pokedex": "0774",
-        "name": "Core Form",
+        "name": "Minior",
         "stats": {
             "hp": "60",
             "atk": "100",
@@ -17291,7 +17291,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Core Form"
     },
     {
         "_id": "934",
@@ -17779,12 +17779,12 @@
             "12"
         ],
         "evolves_to": null,
-        "has_form": "962"
+        "has_form": null
     },
     {
         "_id": "960",
         "pokedex": "0800",
-        "name": "Ultra Necrozma",
+        "name": "Necrozma",
         "stats": {
             "hp": "97",
             "atk": "157",
@@ -17798,12 +17798,12 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Dusk Mane Necrozma"
     },
     {
         "_id": "961",
         "pokedex": "0800",
-        "name": "Ultra Necrozma",
+        "name": "Necrozma",
         "stats": {
             "hp": "97",
             "atk": "113",
@@ -17817,12 +17817,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Dawn Wings Necrozma"
     },
     {
         "_id": "962",
         "pokedex": "0800",
-        "name": "Ultra Necrozma",
+        "name": "Necrozma",
         "stats": {
             "hp": "97",
             "atk": "167",
@@ -17836,7 +17836,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Ultra Necrozma"
     },
     {
         "_id": "963",
@@ -18735,12 +18735,12 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": "1012"
+        "has_form": "Amped Form"
     },
     {
         "_id": "1012",
         "pokedex": "0849",
-        "name": "Low Key Form",
+        "name": "Toxtricity",
         "stats": {
             "hp": "75",
             "atk": "98",
@@ -18754,7 +18754,7 @@
             "2"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Low Key Form"
     },
     {
         "_id": "1013",
@@ -19233,12 +19233,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": "1039"
+        "has_form": "Ice Face"
     },
     {
         "_id": "1039",
         "pokedex": "0875",
-        "name": "Noice Face",
+        "name": "Eiscue",
         "stats": {
             "hp": "75",
             "atk": "80",
@@ -19251,7 +19251,7 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Noice Face"
     },
     {
         "_id": "1040",
@@ -19270,12 +19270,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "1041"
+        "has_form": "Male"
     },
     {
         "_id": "1041",
         "pokedex": "0876",
-        "name": "Female",
+        "name": "Indeedee",
         "stats": {
             "hp": "70",
             "atk": "55",
@@ -19289,7 +19289,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Female"
     },
     {
         "_id": "1042",
@@ -19308,12 +19308,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": "1043"
+        "has_form": "Full Belly Mode"
     },
     {
         "_id": "1043",
         "pokedex": "0877",
-        "name": "Hangry Mode",
+        "name": "Morpeko",
         "stats": {
             "hp": "58",
             "atk": "95",
@@ -19327,7 +19327,7 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hangry Mode"
     },
     {
         "_id": "1044",
@@ -19533,12 +19533,12 @@
             "10"
         ],
         "evolves_to": null,
-        "has_form": "1055"
+        "has_form": "Hero of Many Battles"
     },
     {
         "_id": "1055",
         "pokedex": "0888",
-        "name": "Crowned Sword",
+        "name": "Zacian",
         "stats": {
             "hp": "92",
             "atk": "150",
@@ -19552,7 +19552,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Crowned Sword"
     },
     {
         "_id": "1056",
@@ -19570,12 +19570,12 @@
             "11"
         ],
         "evolves_to": null,
-        "has_form": "1057"
+        "has_form": "Hero of Many Battles"
     },
     {
         "_id": "1057",
         "pokedex": "0889",
-        "name": "Crowned Shield",
+        "name": "Zamazenta",
         "stats": {
             "hp": "92",
             "atk": "120",
@@ -19589,7 +19589,7 @@
             "14"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Crowned Shield"
     },
     {
         "_id": "1058",
@@ -19608,12 +19608,12 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": "1059"
+        "has_form": null
     },
     {
         "_id": "1059",
         "pokedex": "0890",
-        "name": "Eternamax",
+        "name": "Eternatus",
         "stats": {
             "hp": "255",
             "atk": "115",
@@ -19627,7 +19627,7 @@
             "17"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Eternamax"
     },
     {
         "_id": "1060",
@@ -19664,12 +19664,12 @@
             "18"
         ],
         "evolves_to": null,
-        "has_form": "1062"
+        "has_form": "Single Strike Style"
     },
     {
         "_id": "1062",
         "pokedex": "0892",
-        "name": "Rapid Strike Style",
+        "name": "Urshifu",
         "stats": {
             "hp": "100",
             "atk": "130",
@@ -19683,7 +19683,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Rapid Strike Style"
     },
     {
         "_id": "1063",
@@ -19793,12 +19793,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": "1070"
+        "has_form": null
     },
     {
         "_id": "1069",
         "pokedex": "0898",
-        "name": "Shadow Rider",
+        "name": "Calyrex",
         "stats": {
             "hp": "100",
             "atk": "165",
@@ -19812,12 +19812,12 @@
             "15"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Ice Rider"
     },
     {
         "_id": "1070",
         "pokedex": "0898",
-        "name": "Shadow Rider",
+        "name": "Calyrex",
         "stats": {
             "hp": "100",
             "atk": "85",
@@ -19831,7 +19831,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Shadow Rider"
     },
     {
         "_id": "1071",
@@ -19888,12 +19888,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "1074"
+        "has_form": null
     },
     {
         "_id": "1074",
         "pokedex": "0901",
-        "name": "Bloodmoon",
+        "name": "Ursaluna",
         "stats": {
             "hp": "113",
             "atk": "70",
@@ -19907,7 +19907,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Bloodmoon"
     },
     {
         "_id": "1075",
@@ -19926,12 +19926,12 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": "1076"
+        "has_form": "Male"
     },
     {
         "_id": "1076",
         "pokedex": "0902",
-        "name": "Female",
+        "name": "Basculegion",
         "stats": {
             "hp": "120",
             "atk": "92",
@@ -19945,7 +19945,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Female"
     },
     {
         "_id": "1077",
@@ -20002,12 +20002,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "1080"
+        "has_form": "Incarnate Forme"
     },
     {
         "_id": "1080",
         "pokedex": "0905",
-        "name": "Therian Forme",
+        "name": "Enamorus",
         "stats": {
             "hp": "74",
             "atk": "115",
@@ -20021,7 +20021,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Therian Forme"
     },
     {
         "_id": "1081",
@@ -20222,12 +20222,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "1092"
+        "has_form": "Male"
     },
     {
         "_id": "1092",
         "pokedex": "0916",
-        "name": "Female",
+        "name": "Oinkologne",
         "stats": {
             "hp": "115",
             "atk": "90",
@@ -20240,7 +20240,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Female"
     },
     {
         "_id": "1093",
@@ -20405,12 +20405,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "1102"
+        "has_form": "Family of Four"
     },
     {
         "_id": "1102",
         "pokedex": "0925",
-        "name": "Family of Three",
+        "name": "Maushold",
         "stats": {
             "hp": "74",
             "atk": "75",
@@ -20423,7 +20423,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Family of Three"
     },
     {
         "_id": "1103",
@@ -20535,12 +20535,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": "1111"
+        "has_form": "Green Plumage"
     },
     {
         "_id": "1109",
         "pokedex": "0931",
-        "name": "White Plumage",
+        "name": "Squawkabilly",
         "stats": {
             "hp": "82",
             "atk": "96",
@@ -20554,12 +20554,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Blue Plumage"
     },
     {
         "_id": "1110",
         "pokedex": "0931",
-        "name": "White Plumage",
+        "name": "Squawkabilly",
         "stats": {
             "hp": "82",
             "atk": "96",
@@ -20573,12 +20573,12 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Yellow Plumage"
     },
     {
         "_id": "1111",
         "pokedex": "0931",
-        "name": "White Plumage",
+        "name": "Squawkabilly",
         "stats": {
             "hp": "82",
             "atk": "96",
@@ -20592,7 +20592,7 @@
             "4"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "White Plumage"
     },
     {
         "_id": "1112",
@@ -21202,12 +21202,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": "1145"
+        "has_form": "Zero Form"
     },
     {
         "_id": "1145",
         "pokedex": "0964",
-        "name": "Hero Form",
+        "name": "Palafin",
         "stats": {
             "hp": "100",
             "atk": "160",
@@ -21220,7 +21220,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hero Form"
     },
     {
         "_id": "1146",
@@ -21480,12 +21480,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": "1161"
+        "has_form": "Curly Form"
     },
     {
         "_id": "1160",
         "pokedex": "0978",
-        "name": "Stretchy Form",
+        "name": "Tatsugiri",
         "stats": {
             "hp": "68",
             "atk": "50",
@@ -21499,12 +21499,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Droopy Form"
     },
     {
         "_id": "1161",
         "pokedex": "0978",
-        "name": "Stretchy Form",
+        "name": "Tatsugiri",
         "stats": {
             "hp": "68",
             "atk": "50",
@@ -21518,7 +21518,7 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Stretchy Form"
     },
     {
         "_id": "1162",
@@ -21593,12 +21593,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "1166"
+        "has_form": "Two-Segment Form"
     },
     {
         "_id": "1166",
         "pokedex": "0982",
-        "name": "Three-Segment Form",
+        "name": "Dudunsparce",
         "stats": {
             "hp": "125",
             "atk": "100",
@@ -21611,7 +21611,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Three-Segment Form"
     },
     {
         "_id": "1167",
@@ -21933,12 +21933,12 @@
             "16"
         ],
         "evolves_to": "1185",
-        "has_form": "1184"
+        "has_form": "Chest Form"
     },
     {
         "_id": "1184",
         "pokedex": "0999",
-        "name": "Roaming Form",
+        "name": "Gimmighoul",
         "stats": {
             "hp": "45",
             "atk": "30",
@@ -21951,7 +21951,7 @@
             "16"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Roaming Form"
     },
     {
         "_id": "1185",
@@ -22292,12 +22292,12 @@
             "1"
         ],
         "evolves_to": null,
-        "has_form": "1205"
+        "has_form": "Teal Mask"
     },
     {
         "_id": "1203",
         "pokedex": "1017",
-        "name": "Cornerstone Mask",
+        "name": "Ogerpon",
         "stats": {
             "hp": "80",
             "atk": "120",
@@ -22311,12 +22311,12 @@
             "5"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Wellspring Mask"
     },
     {
         "_id": "1204",
         "pokedex": "1017",
-        "name": "Cornerstone Mask",
+        "name": "Ogerpon",
         "stats": {
             "hp": "80",
             "atk": "120",
@@ -22330,12 +22330,12 @@
             "3"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Hearthflame Mask"
     },
     {
         "_id": "1205",
         "pokedex": "1017",
-        "name": "Cornerstone Mask",
+        "name": "Ogerpon",
         "stats": {
             "hp": "80",
             "atk": "120",
@@ -22349,7 +22349,7 @@
             "13"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Cornerstone Mask"
     },
     {
         "_id": "1206",
@@ -22481,12 +22481,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": "1214"
+        "has_form": "Normal Form"
     },
     {
         "_id": "1213",
         "pokedex": "1024",
-        "name": "Stellar Form",
+        "name": "Terapagos",
         "stats": {
             "hp": "95",
             "atk": "95",
@@ -22499,12 +22499,12 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Terastal Form"
     },
     {
         "_id": "1214",
         "pokedex": "1024",
-        "name": "Stellar Form",
+        "name": "Terapagos",
         "stats": {
             "hp": "160",
             "atk": "105",
@@ -22517,7 +22517,7 @@
             "7"
         ],
         "evolves_to": null,
-        "has_form": null
+        "has_form": "Stellar Form"
     },
     {
         "_id": "1215",
