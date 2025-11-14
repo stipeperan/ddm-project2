@@ -126,7 +126,7 @@ db.Battle.aggregate([
   }
 ]);
 
-// 4. Most winning Pokémon  (your tested version)
+// 4. Most winning Pokémon 
 db.Battle.aggregate([
   {
     $group: {
@@ -218,45 +218,45 @@ db.Battle.aggregate([
 
 // 6. Wins for each Pokémon and its evolutions (sum over evolution chain)
 // Assumes evolution_line[0] = root Pokémon name (or ID – adjust if needed)
-db.Battle.aggregate([
-  // count wins per Pokémon
-  {
-    $group: {
-      _id: "$participants.winner.pokemon_id",
-      wins: { $sum: 1 }
-    }
-  },
-  // join with Pokemon to get evolution_line
-  {
-    $lookup: {
-      from: "Pokemon",
-      localField: "_id",
-      foreignField: "_id",
-      as: "pokemon"
-    }
-  },
-  { $unwind: "$pokemon" },
-  {
-    $project: {
-      wins: 1,
-      root: { $arrayElemAt: ["$pokemon.evolution_line", 0] }
-    }
-  },
-  {
-    $group: {
-      _id: "$root",
-      wins_in_chain: { $sum: "$wins" }
-    }
-  },
-  { $sort: { wins_in_chain: -1, _id: 1 } },
-  {
-    $project: {
-      _id: 0,
-      rootPokemon: "$_id",
-      wins_in_chain: 1
-    }
-  }
-]);
+// db.Battle.aggregate([
+//   // count wins per Pokémon
+//   {
+//     $group: {
+//       _id: "$participants.winner.pokemon_id",
+//       wins: { $sum: 1 }
+//     }
+//   },
+//   // join with Pokemon to get evolution_line
+//   {
+//     $lookup: {
+//       from: "Pokemon",
+//       localField: "_id",
+//       foreignField: "_id",
+//       as: "pokemon"
+//     }
+//   },
+//   { $unwind: "$pokemon" },
+//   {
+//     $project: {
+//       wins: 1,
+//       root: { $arrayElemAt: ["$pokemon.evolution_line", 0] }
+//     }
+//   },
+//   {
+//     $group: {
+//       _id: "$root",
+//       wins_in_chain: { $sum: "$wins" }
+//     }
+//   },
+//   { $sort: { wins_in_chain: -1, _id: 1 } },
+//   {
+//     $project: {
+//       _id: 0,
+//       rootPokemon: "$_id",
+//       wins_in_chain: 1
+//     }
+//   }
+// ]);
 
 // 7. Gym that hosted the highest number of battles
 db.Battle.aggregate([
@@ -471,16 +471,21 @@ db.Pokemon.aggregate([
   { $count: "numMaxEvolution" }
 ]);
 
-// 12. Most powerful Pokémon (by total) – your version (top 1)
+// 12. Most powerful Pokémon (by total) 
 db.Pokemon.aggregate([
-  { $project: { _id: 0, name: 1, tot: "$stats.tot" } },
+  { 
+    $project: { 
+      _id: 0, 
+      name: 1, 
+      tot: "$stats.tot", 
+      form: "$has_form" 
+    } 
+  },
   { $sort: { tot: -1 } },
-  { $limit: 1 }
+  { $limit: 10 }
 ]);
 
-// (If you want top 10 instead, just set { $limit: 10 } and keep _id if useful)
-
-// 13. Most powerful Pokémon for each type – your tested version
+// 13. Most powerful Pokémon for each type 
 db.Pokemon.aggregate([
   { $unwind: "$types" },
   { $sort: { "stats.tot": -1 } },
@@ -512,7 +517,6 @@ db.Pokemon.aggregate([
 ]);
 
 // 14. Group all Pokémon of type Water
-// (type is an ID in Pokemon.types, mapped via Type collection)
 db.Type.aggregate([
   { $match: { name: "Water" } },
   {
@@ -535,56 +539,88 @@ db.Type.aggregate([
 
 // 15. Highest improvement (Total) from base → max evolution
 // Assumes evolution_line[0] is the base Pokémon's name
-db.Pokemon.aggregate([
+// db.Pokemon.aggregate([
+//   // 1) Select only base evolutions (no prev evolution)
+//   {
+//     $match: { "evolution.prev": null }
+//   },
+
+//   // 2) Lookup all descendants via graph recursion
+//   {
+//     $graphLookup: {
+//       from: "Pokemon",
+//       startWith: "$_id",
+//       connectFromField: "evolution.next",
+//       connectToField: "_id",
+//       as: "descendants"
+//     }
+//   },
+
+//   // 3) Convert base total and descendants' totals to numbers
+//   {
+//     $addFields: {
+//       baseTotalNum: { $toInt: "$stats.tot" },
+//       descendantsTotals: {
+//         $map: {
+//           input: "$descendants",
+//           as: "d",
+//           in: { $toInt: "$$d.stats.tot" }
+//         }
+//       }
+//     }
+//   },
+
+//   // 4) Compute max descendant total
+//   {
+//     $addFields: {
+//       maxDescTotalNum: { $max: "$descendantsTotals" }
+//     }
+//   },
+
+//   // 5) Compute improvement (max descendant total − base total)
+//   {
+//     $addFields: {
+//       improvement: {
+//         $subtract: ["$maxDescTotalNum", "$baseTotalNum"]
+//       }
+//     }
+//   },
+
+//   // 6) Output final fields only
+//   {
+//     $project: {
+//       _id: 0,
+//       basePokemon: "$name",
+//       baseTotal: "$baseTotalNum",
+//       maxDescTotal: "$maxDescTotalNum",
+//       improvement: 1
+//     }
+//   },
+
+//   // 7) SORT: decreasing order (biggest improvement first)
+//   { $sort: { improvement: -1 } },
+
+//   // 8) limit to top 20 
+//   { $limit: 20 }
+// ]);
+
+// 16. Gyms and their type specialization
+db.Gym.aggregate([
   {
-    $addFields: {
-      base: { $arrayElemAt: ["$evolution_line", 0] }
+    $lookup: {
+      from: "Type",
+      localField: "type",
+      foreignField: "_id",
+      as: "typeInfo"
     }
   },
-  {
-    $group: {
-      _id: "$base",
-      baseTotal: {
-        $max: {
-          $cond: [
-            { $eq: ["$name", "$base"] },
-            "$stats.tot",
-            0
-          ]
-        }
-      },
-      maxDescTotal: { $max: "$stats.tot" }
-    }
-  },
+  { $unwind: "$typeInfo" },
   {
     $project: {
       _id: 0,
-      basePokemon: "$_id",
-      baseTotal: 1,
-      maxDescTotal: 1,
-      improvement: {
-        $subtract: ["$maxDescTotal", "$baseTotal"]
-      }
+      gym: "$name",
+      specializesIn: "$typeInfo.name"
     }
   },
-  { $sort: { improvement: -1 } },
-  { $limit: 20 }
+  { $sort: { gym: 1, specializesIn: 1 } }
 ]);
-
-// (Optional) Gyms and their type specialization,
-// if your Gym docs store a "type_id" that matches Type._id
-// db.Gym.aggregate([
-//   {
-//     $lookup: {
-//       from: "Type",
-//       localField: "type_id",
-//       foreignField: "_id",
-//       as: "type"
-//     }
-//   },
-//   { $unwind: "$type" },
-//   {
-//     $project: { _id: 0, gym: "$name", specializesIn: "$type.name" }
-//   },
-//   { $sort: { gym: 1, specializesIn: 1 } }
-// ]);
