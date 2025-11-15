@@ -1,0 +1,33 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "_id",
+      "badge_name",
+      "location",
+      "name",
+      "region",
+      "type"
+    ],
+    "properties": {
+      "_id": {
+        "bsonType": "string"
+      },
+      "badge_name": {
+        "bsonType": "string"
+      },
+      "location": {
+        "bsonType": "string"
+      },
+      "name": {
+        "bsonType": "string"
+      },
+      "region": {
+        "bsonType": "string"
+      },
+      "type": {
+        "bsonType": "string"
+      }
+    }
+  }
+}
