@@ -167,7 +167,24 @@
     \end{lstlisting}
 
     \subsection{Editing Commands}
-    Five additional editing commands were included, demonstrating MongoDB’s flexibility for inserts, updates, and deletes. These operations mimic real-world changes such as new Pokémon discovery or stat correction.
+    Five additional editing commands were included, demonstrating MongoDB’s flexibility for inserts, updates, and deletes. These operations mimic real-world changes such as new Pokémon discovery or stat correction.\\
+    \paragraph{1. Add a Pokémon}
+    \begin{lstlisting}
+    db["Pokemon"].insertOne({pokedex: "9999",
+                             name: "DataDesignosaur",
+                             stats: {hp: "99",
+                                     atk: "99",
+                                     def: "99",
+                                     sp_atk: "99",
+                                     sp_def: "99",
+                                     tot: "1000"},
+                             types: ["5","12"]}) 
+    \end{lstlisting}
+    \paragraph{2. Change ownership of a Pokémon}
+    \begin{lstlisting}
+    db.Trainer.updateOne({owns: "199"}, {$pull: {owns: "199"}})
+    db.Trainer.updateOne({_id: "1"}, {$push: {owns: "199"}})
+    \end{lstlisting}
 
     \section{Discussion}
     Compared to Neo4j, MongoDB excels in:
