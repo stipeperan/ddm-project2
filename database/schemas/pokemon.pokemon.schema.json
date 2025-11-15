@@ -1,0 +1,74 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "_id",
+      "evolves_to",
+      "has_form",
+      "name",
+      "pokedex",
+      "stats",
+      "types"
+    ],
+    "properties": {
+      "_id": {
+        "bsonType": "string"
+      },
+      "evolves_to": {
+        "bsonType": [
+          "null",
+          "string"
+        ]
+      },
+      "has_form": {
+        "bsonType": [
+          "null",
+          "string"
+        ]
+      },
+      "name": {
+        "bsonType": "string"
+      },
+      "pokedex": {
+        "bsonType": "string"
+      },
+      "stats": {
+        "bsonType": "object",
+        "properties": {
+          "atk": {
+            "bsonType": "string"
+          },
+          "def": {
+            "bsonType": "string"
+          },
+          "hp": {
+            "bsonType": "string"
+          },
+          "sp_atk": {
+            "bsonType": "string"
+          },
+          "sp_def": {
+            "bsonType": "string"
+          },
+          "tot": {
+            "bsonType": "string"
+          }
+        },
+        "required": [
+          "atk",
+          "def",
+          "hp",
+          "sp_atk",
+          "sp_def",
+          "tot"
+        ]
+      },
+      "types": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "string"
+        }
+      }
+    }
+  }
+}

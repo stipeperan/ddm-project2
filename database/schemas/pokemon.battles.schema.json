@@ -1,0 +1,61 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "_id",
+      "date",
+      "gym_id",
+      "participants"
+    ],
+    "properties": {
+      "_id": {
+        "bsonType": "string"
+      },
+      "date": {
+        "bsonType": "string"
+      },
+      "gym_id": {
+        "bsonType": "string"
+      },
+      "participants": {
+        "bsonType": "object",
+        "properties": {
+          "loser": {
+            "bsonType": "object",
+            "properties": {
+              "pokemon_id": {
+                "bsonType": "string"
+              },
+              "trainer_id": {
+                "bsonType": "string"
+              }
+            },
+            "required": [
+              "pokemon_id",
+              "trainer_id"
+            ]
+          },
+          "winner": {
+            "bsonType": "object",
+            "properties": {
+              "pokemon_id": {
+                "bsonType": "string"
+              },
+              "trainer_id": {
+                "bsonType": "string"
+              }
+            },
+            "required": [
+              "pokemon_id",
+              "trainer_id"
+            ]
+          }
+        },
+        "required": [
+          "loser",
+          "winner"
+        ]
+      }
+    }
+  }
+}
