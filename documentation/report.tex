@@ -643,23 +643,134 @@
     \end{lstlisting}
 
     \subsection{Editing Commands}
-    Five additional editing commands were included, demonstrating MongoDB’s flexibility for inserts, updates, and deletes. These operations mimic real-world changes such as new Pokémon discovery or stat correction.\\
-    \paragraph{1. Add a Pokémon}
+    Five additional editing commands were included, demonstrating MongoDB’s flexibility for inserts, updates, and deletes. These operations mimic real-world changes such as new Pokémon discovery or stat correction.
+
+    % Command 1
+    \subsubsection{Add a Pokémon}
+    The execution time for the following query was measured \textbf{2} ms
     \begin{lstlisting}
-    db["Pokemon"].insertOne({pokedex: "9999",
-                             name: "DataDesignosaur",
-                             stats: {hp: "99",
-                                     atk: "99",
-                                     def: "99",
-                                     sp_atk: "99",
-                                     sp_def: "99",
-                                     tot: "1000"},
-                             types: ["5","12"]}) 
+    db.pokemon.findOne({ pokedex: "9999" })
+
+    const newPokemon = {
+      _id: "p9999",
+      pokedex: "9999",
+      name: "DataDesignosaur",
+      evolves_to: null,
+      has_form: null,
+      stats: { hp: "99", atk: "99", def: "99", sp_atk: "99", sp_def: "99", tot: "499" },
+      types: ["5", "12"]
+    };
+
+    db.pokemon.insertOne(newPokemon);
+    const newPokemonId = newPokemon._id;
     \end{lstlisting}
-    \paragraph{2. Change ownership of a Pokémon}
+
+    % Command 2
+    \subsubsection{Move a Pokémon from one trainer to another}
+    The execution time for the following query was measured \textbf{17} ms
     \begin{lstlisting}
     db.Trainer.updateOne({owns: "199"}, {$pull: {owns: "199"}})
     db.Trainer.updateOne({_id: "1"}, {$push: {owns: "199"}})
+    \end{lstlisting}
+
+    % Command 3
+    \subsubsection{Remove a “middle” evolution and connect base ev. to final ev.}
+    The execution time for the following query was measured \textbf{10} ms
+    \begin{lstlisting}
+    const baseId = "1";  // Basic PokemonId
+    
+    const base = db.pokemon.findOne({ _id: baseId });
+    const middleId = base.evolves_to;
+    const middle = db.pokemon.findOne({ _id: middleId });
+    const finalId = middle.evolves_to;
+    
+    // Any Pokemon that evolved into middle should now evolve into final
+    db.pokemon.updateMany(
+      { evolves_to: middleId },
+      { $set: { evolves_to: finalId } }
+    );
+    
+    // Delete the middle evolution
+    db.pokemon.deleteOne({ _id: middleId });
+    \end{lstlisting}
+
+    % Command 4
+    \subsubsection{Remove the gym leader with the lowest win ratio and delete the trainer}
+    The execution time for the following query was measured \textbf{167} ms
+    \begin{lstlisting}
+    db.Trainer.updateOne({owns: "199"}, {$pull: {owns: "199"}})
+    db.Trainer.updateOne({_id: "1"}, {$push: {owns: "199"}})
+    \end{lstlisting}
+
+    % Command 5
+    \subsubsection{Create the trainer Mario, give him the two strongest free Pokémon and assign him to an ownerless gym}
+    The execution time for the following query was measured \textbf{1606} ms
+    \begin{lstlisting}
+    const freeStrongest = db.pokemon.aggregate([
+      // Join with trainers that own this pokemon
+      {
+        $lookup: {
+          from: "trainer",
+          localField: "_id",
+          foreignField: "owns",
+          as: "owners"
+        }
+      },
+      // Keep only pokemon with no owners
+      {
+        $match: {
+          owners: { $eq: [] }
+        }
+      },
+      // Turn stats.tot (string) into a number for correct sorting
+      {
+        $addFields: {
+          totalInt: { $toInt: "$stats.tot" }
+        }
+      },
+      // Strongest first
+      {
+        $sort: { totalInt: -1 }
+      },
+      // Grab only the top 2
+      { $limit: 2 }
+    ]).toArray();
+    
+    const marioPokemonIds = freeStrongest.map(p => p._id);
+    marioPokemonIds;
+    
+    // find an ownerless gym
+    const freeGym = db.gym.aggregate([
+      {
+        $lookup: {
+          from: "trainer",
+          localField: "_id",
+          foreignField: "leads",
+          as: "leaders"
+        }
+      },
+      {
+        $match: {
+          leaders: { $eq: [] }  // gyms with no leader
+        }
+      },
+      { $limit: 1 }
+    ]).toArray()[0];
+    
+    const marioGymId = freeGym._id;
+    marioGymId;
+    
+    // Create Mario
+    const marioId = "t9999";
+    
+    const mario = {
+      _id: marioId,
+      name: "Mario",
+      owns: marioPokemonIds,
+      leads: marioGymId
+    };
+    
+    db.trainer.insertOne(mario);
     \end{lstlisting}
 
     \section{Discussion}
