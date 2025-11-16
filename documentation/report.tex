@@ -86,84 +86,560 @@
 
     \section{Results}
     \subsection{Queries}
-    Twelve representative queries were implemented to demonstrate real-world data retrieval, filtering, and aggregation.  
+    Twelve representative queries were implemented to demonstrate real-world data retrieval, filtering, and aggregation. 
+    For each query, performance was measured by executing the command \newline
+    \texttt{.explain("executionStats")} and examining the value of \texttt{executionStats.executionTimeMillis} in the output, which reports the total execution time of the query.
 
-    \paragraph{1. Find all Grass-type Pokémon}
+    \subsubsection{For each trainer, their most successful Pokémon}
+    The execution time for the following query was measured \textbf{68} ms 
     \begin{lstlisting}
-    db.pokemon.find({ type: "Grass" })
+    db.Battle.aggregate([
+      {
+        $group: {
+          _id: {
+            trainer_id: "$participants.winner.trainer_id",
+            pokemon_id: "$participants.winner.pokemon_id"
+          },
+          wins: { $sum: 1 }
+        }
+      },
+      { $sort: { "_id.trainer_id": 1, wins: -1 } },
+      {
+        $group: {
+          _id: "$_id.trainer_id",
+          top: { $first: { pokemon_id: "$_id.pokemon_id", wins: "$wins" } }
+        }
+      },
+      {
+        $lookup: {
+          from: "Trainer",
+          localField: "_id",
+          foreignField: "_id",
+          as: "trainer"
+        }
+      },
+      { $unwind: "$trainer" },
+      {
+        $lookup: {
+          from: "Pokemon",
+          localField: "top.pokemon_id",
+          foreignField: "_id",
+          as: "pokemon"
+        }
+      },
+      { $unwind: "$pokemon" },
+      {
+        $project: {
+          _id: 0,
+          trainer: "$trainer.name",
+          pokemon: "$pokemon.name",
+          wins: "$top.wins"
+        }
+      },
+      { $sort: { trainer: 1 } }
+    ]);
     \end{lstlisting}
 
-    \paragraph{2. List all Pokémon with Total score above 500}
+    \subsubsection{For each trainer, the gym where they won the most battles}
+    The execution time for the following query was measured \textbf{76} ms
     \begin{lstlisting}
-    db.pokemon.find({ total: { $gt: 500 } }, { name: 1, total: 1 })
+    db.Battle.aggregate([
+      {
+        $group: {
+          _id: {
+            trainer_id: "$participants.winner.trainer_id",
+            gym_id: "$gym_id"
+          },
+          wins: { $sum: 1 }
+        }
+      },
+      { $sort: { "_id.trainer_id": 1, wins: -1 } },
+      {
+        $group: {
+          _id: "$_id.trainer_id",
+          top: { $first: { gym_id: "$_id.gym_id", wins: "$wins" } }
+        }
+      },
+      {
+        $lookup: {
+          from: "Trainer",
+          localField: "_id",
+          foreignField: "_id",
+          as: "trainer"
+        }
+      },
+      { $unwind: "$trainer" },
+      {
+        $lookup: {
+          from: "Gym",
+          localField: "top.gym_id",
+          foreignField: "_id",
+          as: "gym"
+        }
+      },
+      { $unwind: "$gym" },
+      {
+        $project: {
+          _id: 0,
+          trainer: "$trainer.name",
+          gym: "$gym.name",
+          wins: "$top.wins"
+        }
+      },
+      { $sort: { trainer: 1 } }
+    ]);
     \end{lstlisting}
 
-    \paragraph{3. Find Pokémon that evolve into Venusaur}
+    \subsubsection{Most winning trainer}
+    The execution time for the following query was measured \textbf{11} ms
     \begin{lstlisting}
-    db.pokemon.find({ evolution_line: "Venusaur" })
+    db.Battle.aggregate([
+      {
+        $group: {
+          _id: "$participants.winner.trainer_id",
+          wins: { $sum: 1 }
+        }
+      },
+      { $sort: { wins: -1 } },
+      { $limit: 1 },
+      {
+        $lookup: {
+          from: "Trainer",
+          localField: "_id",
+          foreignField: "_id",
+          as: "trainer"
+        }
+      },
+      { $unwind: "$trainer" },
+      {
+        $project: {
+          _id: 0,
+          trainer: "$trainer.name",
+          wins: 1
+        }
+      }
+    ]);
     \end{lstlisting}
 
-    \paragraph{4. Count Pokémon per type}
+    \subsubsection{Most winning pokemon}
+    The execution time for the following query was measured \textbf{4} ms
     \begin{lstlisting}
-    db.pokemon.aggregate([
-    { $unwind: "$type" },
-    { $group: { _id: "$type", count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
-    ])
+    db.Battle.aggregate([
+      {
+        $group: {
+          _id: "$participants.winner.pokemon_id",
+          wins: { $sum: 1 }
+        }
+      },
+      { $sort: { wins: -1 } },
+      { $limit: 1 },
+      {
+        $lookup: {
+          from: "Pokemon",
+          localField: "_id",
+          foreignField: "_id",
+          as: "pokemon"
+        }
+      },
+      { $unwind: "$pokemon" },
+      {
+        $project: {
+          _id: 0,
+          pokemon_name: "$pokemon.name",
+          wins: 1
+        }
+      }
+    ]);
     \end{lstlisting}
 
-    \paragraph{5. Get the fastest Pokémon}
+    \subsubsection{Most winning trainer + most winning Pokémon (UNION-style)}
+    The execution time for the following query was measured \textbf{27} ms
     \begin{lstlisting}
-    db.pokemon.find().sort({ "stats.speed": -1 }).limit(1)
+    db.Battle.aggregate([
+      // Part A: most winning trainer
+      {
+        $group: {
+          _id: "$participants.winner.trainer_id",
+          wins: { $sum: 1 }
+        }
+      },
+      { $sort: { wins: -1 } },
+      { $limit: 1 },
+      {
+        $lookup: {
+          from: "Trainer",
+          localField: "_id",
+          foreignField: "_id",
+          as: "trainer"
+        }
+      },
+      { $unwind: "$trainer" },
+      {
+        $project: {
+          _id: 0,
+          kind: "trainer",
+          name: "$trainer.name",
+          wins: 1
+        }
+      },
+      {
+        $unionWith: {
+          coll: "Battle",
+          pipeline: [
+            {
+              $group: {
+                _id: "$participants.winner.pokemon_id",
+                wins: { $sum: 1 }
+              }
+            },
+            { $sort: { wins: -1 } },
+            { $limit: 1 },
+            {
+              $lookup: {
+                from: "Pokemon",
+                localField: "_id",
+                foreignField: "_id",
+                as: "pokemon"
+              }
+            },
+            { $unwind: "$pokemon" },
+            {
+              $project: {
+                _id: 0,
+                kind: "pokemon",
+                name: "$pokemon.name",
+                wins: 1
+              }
+            }
+          ]
+        }
+      }
+    ]);
     \end{lstlisting}
 
-    \paragraph{6. Retrieve all Pokémon and their evolution stages}
+    \subsubsection{Gym that hosted the highest number of battles}
+    The execution time for the following query was measured \textbf{86} ms
     \begin{lstlisting}
-    db.pokemon.find({}, { name: 1, evolution_line: 1 })
+    db.Battle.aggregate([
+      {
+        $group: {
+          _id: "$gym_id",
+          hosted: { $sum: 1 }
+        }
+      },
+      { $sort: { hosted: -1 } },
+      { $limit: 1 },
+      {
+        $lookup: {
+          from: "Gym",
+          localField: "_id",
+          foreignField: "_id",
+          as: "gym"
+        }
+      },
+      { $unwind: "$gym" },
+      {
+        $project: {
+          _id: 0,
+          gym: "$gym.name",
+          hosted: 1
+        }
+      }
+    ]);
     \end{lstlisting}
 
-    \paragraph{7. Find Pokémon that share both types Grass and Poison}
+    \subsubsection{For each gym, total number of distinct Pokémon that fought there}
+    The execution time for the following query was measured \textbf{25} ms
     \begin{lstlisting}
-    db.pokemon.find({ type: { $all: ["Grass", "Poison"] } })
+    db.Battle.aggregate([
+      {
+        $project: {
+          gym_id: 1,
+          pokemon_ids: [
+            "$participants.winner.pokemon_id",
+            "$participants.loser.pokemon_id"
+          ]
+        }
+      },
+      { $unwind: "$pokemon_ids" },
+      {
+        $group: {
+          _id: { gym_id: "$gym_id", pokemon_id: "$pokemon_ids" }
+        }
+      },
+      {
+        $group: {
+          _id: "$_id.gym_id",
+          fighters: { $sum: 1 }
+        }
+      },
+      {
+        $lookup: {
+          from: "Gym",
+          localField: "_id",
+          foreignField: "_id",
+          as: "gym"
+        }
+      },
+      { $unwind: "$gym" },
+      {
+        $project: {
+          _id: 0,
+          gym: "$gym.name",
+          fighters: 1
+        }
+      },
+      { $sort: { fighters: -1 } }
+    ]);
     \end{lstlisting}
 
-    \paragraph{8. Average attack per type}
+    \subsubsection{Pokémon that fought in the most different gyms}
+    The execution time for the following query was measured \textbf{29} ms
     \begin{lstlisting}
-    db.pokemon.aggregate([
-    { $unwind: "$type" },
-    { $group: { _id: "$type", avg_attack: { $avg: "$stats.attack" } } },
-    { $sort: { avg_attack: -1 } }
-    ])
+    db.Battle.aggregate([
+      {
+        $project: {
+          gym_id: 1,
+          winner_pokemon: "$participants.winner.pokemon_id",
+          loser_pokemon: "$participants.loser.pokemon_id"
+        }
+      },
+      {
+        $project: {
+          pairs: [
+            { gym_id: "$gym_id", pokemon_id: "$winner_pokemon" },
+            { gym_id: "$gym_id", pokemon_id: "$loser_pokemon" }
+          ]
+        }
+      },
+      { $unwind: "$pairs" },
+      {
+        $group: {
+          _id: {
+            pokemon_id: "$pairs.pokemon_id",
+            gym_id: "$pairs.gym_id"
+          }
+        }
+      },
+      {
+        $group: {
+          _id: "$_id.pokemon_id",
+          gymCount: { $sum: 1 }
+        }
+      },
+      { $sort: { gymCount: -1 } },
+      { $limit: 10 },
+      {
+        $lookup: {
+          from: "Pokemon",
+          localField: "_id",
+          foreignField: "_id",
+          as: "pokemon"
+        }
+      },
+      { $unwind: "$pokemon" },
+      {
+        $project: {
+          _id: 0,
+          pokemon: "$pokemon.name",
+          gymCount: 1
+        }
+      }
+    ]);
     \end{lstlisting}
 
-    \paragraph{9. Insert a new Pokémon}
+    \subsubsection{Pokémon type with the best winning ratio}
+    The execution time for the following query was measured \textbf{57} ms
     \begin{lstlisting}
-    db.pokemon.insertOne({
-    "id": 999,
-    "name": "Newmon",
-    "type": ["Fairy"],
-    "stats": { "hp": 80, "attack": 70, "defense": 60 },
-    "total": 410
-    })
+    db.Battle.aggregate([
+      // reshape battle into "fights" documents (pokemon_id + isWin)
+      {
+        $project: {
+          winner_pokemon: "$participants.winner.pokemon_id",
+          loser_pokemon: "$participants.loser.pokemon_id"
+        }
+      },
+      {
+        $project: {
+          fights: [
+            { pokemon_id: "$winner_pokemon", isWin: true },
+            { pokemon_id: "$loser_pokemon", isWin: false }
+          ]
+        }
+      },
+      { $unwind: "$fights" },
+      {
+        $group: {
+          _id: "$fights.pokemon_id",
+          fights: { $sum: 1 },
+          wins: {
+            $sum: { $cond: ["$fights.isWin", 1, 0] }
+          }
+        }
+      },
+      // join Pokemon to get types
+      {
+        $lookup: {
+          from: "Pokemon",
+          localField: "_id",
+          foreignField: "_id",
+          as: "pokemon"
+        }
+      },
+      { $unwind: "$pokemon" },
+      { $unwind: "$pokemon.types" },
+      {
+        $group: {
+          _id: "$pokemon.types",
+          fights: { $sum: "$fights" },
+          wins: { $sum: "$wins" }
+        }
+      },
+      { $match: { fights: { $gt: 0 } } },
+      {
+        $project: {
+          wins: 1,
+          fights: 1,
+          winRatio: { $divide: ["$wins", "$fights"] }
+        }
+      },
+      { $sort: { winRatio: -1 } },
+      { $limit: 5 },
+      // attach type name
+      {
+        $lookup: {
+          from: "Type",
+          localField: "_id",
+          foreignField: "_id",
+          as: "typeInfo"
+        }
+      },
+      { $unwind: "$typeInfo" },
+      {
+        $project: {
+          _id: 0,
+          type: "$typeInfo.name",
+          winRatio: { $round: ["$winRatio", 3] },
+          wins: 1,
+          fights: 1
+        }
+      }
+    ]);
     \end{lstlisting}
 
-    \paragraph{10. Update Venusaur’s description}
+    \subsubsection{Number of Pokémon that are at maximum evolution}
+    The execution time for the following query was measured \textbf{2} ms
     \begin{lstlisting}
-    db.pokemon.updateOne(
-    { name: "Venusaur" },
-    { $set: { description: "Updated description for Venusaur." } }
-    )
+    db.Pokemon.aggregate([
+      {
+        $match: {
+          $or: [
+            { "evolution.next": null },
+            { "evolution.next": { $exists: false } }
+          ]
+        }
+      },
+      { $count: "numMaxEvolution" }
+    ]);
     \end{lstlisting}
 
-    \paragraph{11. Delete Pokémon with missing stats}
+    \subsubsection{Most powerful Pokémon (by total) }
+    The execution time for the following query was measured \textbf{3} ms
     \begin{lstlisting}
-    db.pokemon.deleteMany({ "stats.hp": { $exists: false } })
+    db.Pokemon.aggregate([
+      { 
+        $project: { 
+          _id: 0, 
+          name: 1, 
+          tot: "$stats.tot", 
+          form: "$has_form" 
+        } 
+      },
+      { $sort: { tot: -1 } },
+      { $limit: 10 }
+    ]);
     \end{lstlisting}
 
-    \paragraph{12. Find top 3 Pokémon by total score}
+    \subsubsection{Most powerful Pokémon for each type}
+    The execution time for the following query was measured \textbf{6} ms
     \begin{lstlisting}
-    db.pokemon.find({}, { name: 1, total: 1 })
-    .sort({ total: -1 }).limit(3)
+    db.Pokemon.aggregate([
+      { $unwind: "$types" },
+      { $sort: { "stats.tot": -1 } },
+      {
+        $group: {
+          _id: "$types",
+          pokemon: { $first: "$name" },
+          total: { $first: "$stats.tot" }
+        }
+      },
+      {
+        $lookup: {
+          from: "Type",
+          localField: "_id",
+          foreignField: "_id",
+          as: "typeInfo"
+        }
+      },
+      { $unwind: "$typeInfo" },
+      {
+        $project: {
+          _id: 0,
+          type: "$typeInfo.name",
+          pokemon: 1,
+          total: 1
+        }
+      },
+      { $sort: { type: 1 } }
+    ]);
+    \end{lstlisting}
+
+    \subsubsection{Group all Pokémon of type Water}
+    The execution time for the following query was measured \textbf{3} ms
+    \begin{lstlisting}
+    db.Type.aggregate([
+      { $match: { name: "Water" } },
+      {
+        $lookup: {
+          from: "Pokemon",
+          localField: "_id",
+          foreignField: "types",
+          as: "pokemon"
+        }
+      },
+      { $unwind: "$pokemon" },
+      {
+        $project: {
+          _id: 0,
+          pokemon: "$pokemon.name"
+        }
+      },
+      { $sort: { pokemon: 1 } }
+    ]);
+    \end{lstlisting}
+
+    \subsubsection{Gyms and their type specialization}
+    The execution time for the following query was measured \textbf{5} ms
+    \begin{lstlisting}
+    db.Gym.aggregate([
+      {
+        $lookup: {
+          from: "Type",
+          localField: "type",
+          foreignField: "_id",
+          as: "typeInfo"
+        }
+      },
+      { $unwind: "$typeInfo" },
+      {
+        $project: {
+          _id: 0,
+          gym: "$name",
+          specializesIn: "$typeInfo.name"
+        }
+      },
+      { $sort: { gym: 1, specializesIn: 1 } }
+    ]);
     \end{lstlisting}
 
     \subsection{Editing Commands}
