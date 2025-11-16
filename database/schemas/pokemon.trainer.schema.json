@@ -12,7 +12,10 @@
         "bsonType": "string"
       },
       "leads": {
-        "bsonType": "null"
+        "anyOf": [
+          { "bsonType": "null" },
+          { "bsonType": "string" }
+        ]
       },
       "name": {
         "bsonType": "string"

@@ -42,3 +42,33 @@ db.trainer.updateOne({ _id: "1" }, { $addToSet: { owns: newPokemonId } });
 // 7) Update evolution links: set base Pokemon to evolve to a different id
 // All ids and fields are strings according to the schema
 db.pokemon.updateOne({ _id: "1" }, { $set: { evolves_to: "3" } })
+
+// =========================================================================
+// 4. Remove the gym leader with the lowest win ratio and delete the trainer
+// =========================================================================
+db.trainer.aggregate([
+  { $match: { leads: { $exists: true, $ne: null } } },
+  { $lookup: {
+      from: "battles",
+      let: { gymId: "$leads" },
+      pipeline: [
+        { $match: { $expr: { $eq: ["$gym_id", "$$gymId"] } } }
+      ],
+      as: "battles"
+  }},
+  { $addFields: {
+      total: { $size: "$battles" },
+      wins: { $size: {
+        $filter: {
+          input: "$battles",
+          as: "b",
+          cond: { $eq: ["$$b.participants.winner.trainer_id", "$_id"] }
+        }
+      }}
+  }},
+  { $addFields: {
+      ratio: { $cond: [{ $eq: ["$total", 0] }, 0, { $divide: ["$wins", "$total"] }] }
+  }},
+  { $sort: { ratio: 1, total: 1 } },
+  { $limit: 1 }
+]);
