@@ -56,6 +56,26 @@
     \subsection{Collections and Schema Design}
     The document model was designed according to the \emph{Schema-on-Read} philosophy introduced during the NoSQL lectures. Each document stores semistructured data in JSON format, allowing variable fields and embedded subdocuments.
 
+    \begin{figure}
+      \centering
+      \includegraphics[width=1\linewidth]{Simple Diagram (for presentation).png}
+      \caption{MongoDB schema relationships in brief}
+      \label{fig:mongo-relationships}
+    \end{figure}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=1\linewidth]{Detailed Diagram (for technical review).png}
+      \caption{MongoDB full schema relationships}
+    \end{figure}    
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=1\linewidth]{pokemon_model.png}
+      \caption{MongoDB structure}
+      \label{fig:mongo-structure}
+    \end{figure}
+
     \paragraph{Collections}
     \begin{itemize}
     \item \textbf{pokemon}: canonical Pokémon entries with attributes, types, and evolutions.
