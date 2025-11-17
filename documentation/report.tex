@@ -11,8 +11,7 @@
 \geometry{a4paper, margin=1in}      
 \title{Project 2 - Pokémon world in MongoDB}
 \author{Group 8: Simone Cotardo, Srimal Fonseka, Arthur Morgan, Stipe Peran}
-\date{\today}  
-
+\date{}  
 \lstdefinelanguage{Mongo}{
   morekeywords={db,find,insertOne,insertMany,updateOne,updateMany,deleteOne,deleteMany,aggregate,match,project,group,lookup,unwind,limit,sort,set,push,addToSet},
   keywordstyle=\color{blue}\bfseries,
@@ -55,31 +54,29 @@
 
     \subsection{Collections and schema design}
     The document model was designed according to the \emph{Schema-on-Read} philosophy introduced during the NoSQL lectures. Each document stores semistructured data in JSON format, allowing variable fields and embedded subdocuments.
-
-    \begin{figure}
+    \begin{figure}[h]
       \centering
       \includegraphics[width=1\linewidth]{Simple Diagram (for presentation).png}
       \caption{MongoDB schema relationships in brief}
       \label{fig:mongo-relationships}
     \end{figure}
 
-    \begin{figure}
+    \begin{figure}[h]
       \centering
       \includegraphics[width=1\linewidth]{Detailed Diagram (for technical review).png}
       \caption{MongoDB full schema relationships}
     \end{figure}    
 
-    \begin{figure}
+    \begin{figure}[h]
       \centering
       \includegraphics[width=1\linewidth]{pokemon_model.png}
       \caption{MongoDB structure}
       \label{fig:mongo-structure}
-    \end{figure}
-
+    \end{figure}\\
     \paragraph{Collections}
     \begin{itemize}
-    \item \textbf{Pokemon}: canonical Pokémon entries with attributes, types, and evolutions.
-    \item \textbf{Trainer}: documents describing each trainer and their owned Pokémon.
+    \item \textbf{Pokemon}: canonical Pokémon entries with attributes, types, forms and evolutions.
+    \item \textbf{Trainer}: documents describing each trainer, the Pokémon they own and which gym they lead.
     \item \textbf{Gym}: gym entities and their corresponding specialty types.
     \item \textbf{Type}: static collection containing the 18 Pokémon types.
     \item \textbf{Battle}: match history between trainers and Pokémon.
