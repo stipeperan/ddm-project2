@@ -7,6 +7,7 @@
 \usepackage{geometry}
 \usepackage{xcolor}
 \usepackage{listings}
+\usepackage{float}
 
 \geometry{a4paper, margin=1in}      
 \title{Project 2 - Pokémon world in MongoDB}
@@ -67,12 +68,14 @@
       \caption{MongoDB full schema relationships}
     \end{figure}    
 
-    \begin{figure}[h]
+    \begin{figure}[H]
       \centering
       \includegraphics[width=1\linewidth]{pokemon_model.png}
       \caption{MongoDB structure}
       \label{fig:mongo-structure}
-    \end{figure}\\
+    \end{figure}
+    \noindent As shown in Figure~\ref{fig:mongo-structure}, the \texttt{mixed} field type indicates that a value may be either \texttt{null} or \texttt{string}.
+
     \paragraph{Collections}
     \begin{itemize}
     \item \textbf{Pokemon}: canonical Pokémon entries with attributes, types, forms and evolutions.
