@@ -31,13 +31,13 @@
 \begin{document}
     \maketitle
     
-    \section{Project Scenario}
-    Following the first project implemented in Neo4j, we decided to model the Pokémon world using a document-oriented approach in MongoDB. 
+    \section{Project scenario}
+    Following the first project implemented in Neo4j, we decided to model the same Pokémon world in MongoDB. 
     Instead of focusing on graph relationships such as \texttt{EVOLVES\_TO} or \texttt{OWNS}, this second project focuses on storing and querying semistructured documents efficiently.
 
     MongoDB's document model suits this domain well, as Pokémon, trainers, gyms and battles naturally contain nested attributes, arrays and flexible structures that do not require strong normalization.
 
-    Our goal was to reconstruct the same universe used in Project 1, but mapped into document collections. The real data used in the project comes from five JSON files:
+    The real data used in the project comes from five JSON files:
     \begin{itemize}
         \item \texttt{pokemon.json}
         \item \texttt{trainer.json}
@@ -47,13 +47,13 @@
     \end{itemize}
     
     \section{Methodology}
-    \subsection{Dataset and Preprocessing}
+    \subsection{Dataset and preprocessing}
     We reused the dataset previously collected for the Neo4j project. The main source was a JSON dataset containing Pokémon information (ID, name, stats, type, and evolution line).  
     Data were cleaned and normalized using Python (Pandas), and exported as multiple collections in MongoDB.
 
     The database was deployed using \textbf{MongoDB Compass} for visualization and the \textbf{mongo shell} for queries.
 
-    \subsection{Collections and Schema Design}
+    \subsection{Collections and schema design}
     The document model was designed according to the \emph{Schema-on-Read} philosophy introduced during the NoSQL lectures. Each document stores semistructured data in JSON format, allowing variable fields and embedded subdocuments.
 
     \begin{figure}
@@ -85,25 +85,6 @@
     \item \textbf{Battle}: match history between trainers and Pokémon.
     \end{itemize}
 
-    \paragraph{Example Pokémon document}
-    \begin{lstlisting}
-    {
-    "_id": 1,
-    "name": "Bulbasaur",
-    "form": "No form",
-    "type": ["Grass", "Poison"],
-    "stats": {
-        "hp": 45, "attack": 49, "defense": 49,
-        "sp_atk": 65, "sp_def": 65, "speed": 45
-    },
-    "total": 318,
-    "description": "Bulbasaur is a Grass/Poison type Pokemon...",
-    "evolution_line": ["Bulbasaur", "Ivysaur", "Venusaur"]
-    }
-    \end{lstlisting}
-
-    This schema reflects MongoDB’s flexible document model, supporting nested structures and arrays, unlike the normalized tables of relational databases or edge-based graph storage.
-
     \section{Results}
     \subsection{Queries}
     Twelve representative queries were implemented to demonstrate real-world data retrieval, filtering, and aggregation. 
@@ -111,7 +92,7 @@
     \texttt{.explain("executionStats")} and examining the value of \texttt{executionStats.executionTimeMillis} in the output, which reports the total execution time of the query.
 
     \subsubsection{For each trainer, their most successful Pokémon}
-    The execution time for the following query was measured \textbf{68} ms 
+    The execution time for the following query was measured \textbf{68} ms. 
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -161,7 +142,7 @@
     \end{lstlisting}
 
     \subsubsection{For each trainer, the gym where they won the most battles}
-    The execution time for the following query was measured \textbf{76} ms
+    The execution time for the following query was measured \textbf{76} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -211,7 +192,7 @@
     \end{lstlisting}
 
     \subsubsection{Most winning trainer}
-    The execution time for the following query was measured \textbf{11} ms
+    The execution time for the following query was measured \textbf{11} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -242,7 +223,7 @@
     \end{lstlisting}
 
     \subsubsection{Most winning pokemon}
-    The execution time for the following query was measured \textbf{4} ms
+    The execution time for the following query was measured \textbf{4} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -273,7 +254,7 @@
     \end{lstlisting}
 
     \subsubsection{Most winning trainer + most winning Pokémon}
-    The execution time for the following query was measured \textbf{27} ms
+    The execution time for the following query was measured \textbf{27} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -423,7 +404,7 @@
     \end{lstlisting}
 
     \subsubsection{Gym that hosted the highest number of battles}
-    The execution time for the following query was measured \textbf{86} ms
+    The execution time for the following query was measured \textbf{86} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -454,7 +435,7 @@
     \end{lstlisting}
 
     \subsubsection{For each gym, total number of distinct Pokémon that fought there}
-    The execution time for the following query was measured \textbf{25} ms
+    The execution time for the following query was measured \textbf{25} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -499,7 +480,7 @@
     \end{lstlisting}
 
     \subsubsection{Pokémon that fought in the most different gyms}
-    The execution time for the following query was measured \textbf{29} ms
+    The execution time for the following query was measured \textbf{29} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       {
@@ -554,7 +535,7 @@
     \end{lstlisting}
 
     \subsubsection{Pokémon type with the best winning ratio}
-    The execution time for the following query was measured \textbf{57} ms
+    The execution time for the following query was measured \textbf{57} ms.
     \begin{lstlisting}
     db.Battle.aggregate([
       // reshape battle into "fights" documents (pokemon_id + isWin)
@@ -633,7 +614,7 @@
     \end{lstlisting}
 
     \subsubsection{Number of Pokémon that are at maximum evolution}
-    The execution time for the following query was measured \textbf{2} ms
+    The execution time for the following query was measured \textbf{2} ms.
     \begin{lstlisting}
     db.Pokemon.aggregate([
       {
@@ -649,7 +630,7 @@
     \end{lstlisting}
 
     \subsubsection{Most powerful Pokémon (by total) }
-    The execution time for the following query was measured \textbf{3} ms
+    The execution time for the following query was measured \textbf{3} ms.
     \begin{lstlisting}
     db.Pokemon.aggregate([
       { 
@@ -666,7 +647,7 @@
     \end{lstlisting}
 
     \subsubsection{Most powerful Pokémon for each type}
-    The execution time for the following query was measured \textbf{6} ms
+    The execution time for the following query was measured \textbf{6} ms.
     \begin{lstlisting}
     db.Pokemon.aggregate([
       { $unwind: "$types" },
@@ -700,7 +681,7 @@
     \end{lstlisting}
 
     \subsubsection{Group all Pokémon of type Water}
-    The execution time for the following query was measured \textbf{3} ms
+    The execution time for the following query was measured \textbf{3} ms.
     \begin{lstlisting}
     db.Type.aggregate([
       { $match: { name: "Water" } },
@@ -798,7 +779,7 @@
     \end{lstlisting}
 
     \subsubsection{Gyms and their type specialization}
-    The execution time for the following query was measured \textbf{5} ms
+    The execution time for the following query was measured \textbf{5} ms.
     \begin{lstlisting}
     db.Gym.aggregate([
       {
@@ -821,12 +802,15 @@
     ]);
     \end{lstlisting}
 
-    \subsection{Editing Commands}
-    Five additional editing commands were included, demonstrating MongoDB's flexibility for inserts, updates, and deletes. These operations mimic real-world changes such as new Pokémon discovery or stat correction.
+    \subsection{Editing commands}
+    Five additional editing commands were implemented to illustrate how MongoDB handles inserts, updates, and deletes. 
+    These operations mimic real-world changes such as new Pokémon discovery or stat correction.
+    While MongoDB offers strong flexibility for modifying documents, update operations that involve multiple “joins” tend to require more elaborate coordination across collections when compared to Neo4J’s built-in graph traversal.
+    To measure execution time, each command was wrapped between two \texttt{Date.now()} calls: one before the operation and one afterward.
 
     % Command 1
     \subsubsection{Add a Pokémon}
-    The execution time for the following query was measured \textbf{2} ms
+    The execution time for the following query was measured \textbf{2} ms.
     \begin{lstlisting}
     const newPokemon = {
       _id: "p9999",
@@ -844,7 +828,7 @@
 
     % Command 2
     \subsubsection{Move a Pokémon from one trainer to another}
-    The execution time for the following query was measured \textbf{17} ms
+    The execution time for the following query was measured \textbf{17} ms.
     \begin{lstlisting}
     db.Trainer.updateOne({owns: "199"}, {$pull: {owns: "199"}})
     db.Trainer.updateOne({_id: "1"}, {$push: {owns: "199"}})
@@ -852,7 +836,7 @@
 
     % Command 3
     \subsubsection{Remove a “middle” evolution and connect base ev. to final ev.}
-    The execution time for the following query was measured \textbf{10} ms
+    The execution time for the following query was measured \textbf{10} ms.
     \begin{lstlisting}
     const baseId = "1";  // Basic PokemonId
     
@@ -873,7 +857,7 @@
 
     % Command 4
     \subsubsection{Remove the gym leader with the lowest win ratio and delete the trainer}
-    The execution time for the following query was measured \textbf{167} ms
+    The execution time for the following query was measured \textbf{167} ms.
     \begin{lstlisting}
     // Only gym leaders
     const worstLeader = db.Trainer.aggregate([
@@ -953,7 +937,7 @@
 
     % Command 5
     \subsubsection{Create the trainer Mario, give him the two strongest free Pokémon and assign him to an ownerless gym}
-    The execution time for the following query was measured \textbf{1606} ms
+    The execution time for the following query was measured \textbf{1606} ms.
     \begin{lstlisting}
     const freeStrongest = db.Pokemon.aggregate([
       // Join with trainers that own this pokemon
@@ -1026,11 +1010,12 @@
     Compared to Neo4j, MongoDB excels in:
     \begin{itemize}
     \item \textbf{Data ingestion speed:} loading JSON documents was faster than importing CSVs and building relationships in Neo4j.
-    \item \textbf{Flexibility:} the schema-less design allows embedding and easy updates.
+    \item \textbf{Flexibility:} the schema-less design model supports embedded structures and makes it easy to add or modify fields over time.
     \item \textbf{Horizontal scalability:} MongoDB scales out with sharding, as introduced in the lecture on data architectures.
     \end{itemize}
 
-    However, Neo4j remains more efficient for relationship-heavy queries such as multi-hop evolutions, due to its index-free adjacency. MongoDB required more explicit aggregations for such traversals.
+    However, Neo4j remains more efficient for relationship-heavy queries such as multi-hop evolutions, thanks to its index-free adjacency.
+    In MongoDB, equivalent operations required more explicit aggregations and joining logic between collections.
 
     \section{Conclusion}
     This project successfully migrated the Pokémon world model from a graph to a document-oriented representation.  
