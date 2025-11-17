@@ -78,11 +78,11 @@
 
     \paragraph{Collections}
     \begin{itemize}
-    \item \textbf{pokemon}: canonical Pokémon entries with attributes, types, and evolutions.
-    \item \textbf{trainers}: documents describing each trainer and their owned Pokémon.
-    \item \textbf{gyms}: gym entities and their corresponding specialty types.
-    \item \textbf{types}: static collection containing the 18 Pokémon types.
-    \item \textbf{battles}: match history between trainers and Pokémon.
+    \item \textbf{Pokemon}: canonical Pokémon entries with attributes, types, and evolutions.
+    \item \textbf{Trainer}: documents describing each trainer and their owned Pokémon.
+    \item \textbf{Gym}: gym entities and their corresponding specialty types.
+    \item \textbf{Type}: static collection containing the 18 Pokémon types.
+    \item \textbf{Battle}: match history between trainers and Pokémon.
     \end{itemize}
 
     \paragraph{Example Pokémon document}
@@ -669,8 +669,6 @@
     \subsubsection{Add a Pokémon}
     The execution time for the following query was measured \textbf{2} ms
     \begin{lstlisting}
-    db.pokemon.findOne({ pokedex: "9999" })
-
     const newPokemon = {
       _id: "p9999",
       pokedex: "9999",
@@ -681,7 +679,7 @@
       types: ["5", "12"]
     };
 
-    db.pokemon.insertOne(newPokemon);
+    db.Pokemon.insertOne(newPokemon);
     const newPokemonId = newPokemon._id;
     \end{lstlisting}
 
@@ -699,38 +697,110 @@
     \begin{lstlisting}
     const baseId = "1";  // Basic PokemonId
     
-    const base = db.pokemon.findOne({ _id: baseId });
+    const base = db.Pokemon.findOne({ _id: baseId });
     const middleId = base.evolves_to;
-    const middle = db.pokemon.findOne({ _id: middleId });
+    const middle = db.Pokemon.findOne({ _id: middleId });
     const finalId = middle.evolves_to;
     
     // Any Pokemon that evolved into middle should now evolve into final
-    db.pokemon.updateMany(
+    db.Pokemon.updateMany(
       { evolves_to: middleId },
       { $set: { evolves_to: finalId } }
     );
     
     // Delete the middle evolution
-    db.pokemon.deleteOne({ _id: middleId });
+    db.Pokemon.deleteOne({ _id: middleId });
     \end{lstlisting}
 
     % Command 4
     \subsubsection{Remove the gym leader with the lowest win ratio and delete the trainer}
     The execution time for the following query was measured \textbf{167} ms
     \begin{lstlisting}
-    db.Trainer.updateOne({owns: "199"}, {$pull: {owns: "199"}})
-    db.Trainer.updateOne({_id: "1"}, {$push: {owns: "199"}})
+    // Only gym leaders
+    const worstLeader = db.Trainer.aggregate([
+      {
+        $match: {
+          leads: { $exists: true, $ne: null }
+        }
+      },
+
+      // Look up all battles where this trainer participated (winner OR loser)
+      {
+        $lookup: {
+          from: "Battle",
+          let: { tid: "$_id" },
+          pipeline: [
+            {
+              $match: {
+                $expr: {
+                  $or: [
+                    { $eq: ["$participants.winner.trainer_id", "$$tid"] },
+                    { $eq: ["$participants.loser.trainer_id", "$$tid"] }
+                  ]
+                }
+              }
+            }
+          ],
+          as: "battles"
+        }
+      },
+
+      // total battles and wins for this trainer
+      {
+        $addFields: {
+          total: { $size: "$battles" },
+          wins: {
+            $size: {
+              $filter: {
+                input: "$battles",
+                as: "b",
+                cond: {
+                  $eq: ["$$b.participants.winner.trainer_id", "$_id"]
+                }
+              }
+            }
+          }
+        }
+      },
+
+      // Ignore leaders with no battles
+      {
+        $match: {
+          total: { $gt: 0 }
+        }
+      },
+
+      // win ratio = wins / total
+      {
+        $addFields: {
+          ratio: {
+            $divide: ["$wins", "$total"]
+          }
+        }
+      },
+
+      // Worst first: lowest ratio, then fewest battles as tiebreaker
+      {
+        $sort: {
+          ratio: 1,
+          total: 1
+        }
+      },
+      { $limit: 1 }
+    ]).toArray()[0];
+
+    db.Trainer.deleteOne({ _id: worstLeader._id });
     \end{lstlisting}
 
     % Command 5
     \subsubsection{Create the trainer Mario, give him the two strongest free Pokémon and assign him to an ownerless gym}
     The execution time for the following query was measured \textbf{1606} ms
     \begin{lstlisting}
-    const freeStrongest = db.pokemon.aggregate([
+    const freeStrongest = db.Pokemon.aggregate([
       // Join with trainers that own this pokemon
       {
         $lookup: {
-          from: "trainer",
+          from: "Trainer",
           localField: "_id",
           foreignField: "owns",
           as: "owners"
@@ -755,15 +825,15 @@
       // Grab only the top 2
       { $limit: 2 }
     ]).toArray();
-    
+
     const marioPokemonIds = freeStrongest.map(p => p._id);
     marioPokemonIds;
-    
+
     // find an ownerless gym
-    const freeGym = db.gym.aggregate([
+    const freeGym = db.Gym.aggregate([
       {
         $lookup: {
-          from: "trainer",
+          from: "Trainer",
           localField: "_id",
           foreignField: "leads",
           as: "leaders"
@@ -776,21 +846,21 @@
       },
       { $limit: 1 }
     ]).toArray()[0];
-    
+
     const marioGymId = freeGym._id;
     marioGymId;
-    
+
     // Create Mario
     const marioId = "t9999";
-    
+
     const mario = {
       _id: marioId,
       name: "Mario",
       owns: marioPokemonIds,
       leads: marioGymId
     };
-    
-    db.trainer.insertOne(mario);
+
+    db.Trainer.insertOne(mario);
     \end{lstlisting}
 
     \section{Discussion}

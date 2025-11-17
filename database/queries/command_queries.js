@@ -2,7 +2,7 @@
 // 1. Add a Pokémon
 // ================
 // Test before
-db.pokemon.findOne({ pokedex: "9999" })
+db.Pokemon.findOne({ pokedex: "9999" })
 
 // Command
 const newPokemon = {
@@ -15,11 +15,11 @@ const newPokemon = {
 	types: ["5", "12"]
 };
 
-db.pokemon.insertOne(newPokemon);
+db.Pokemon.insertOne(newPokemon);
 const newPokemonId = newPokemon._id;
 
 // Test after
-db.pokemon.findOne({ _id: newPokemonId })
+db.Pokemon.findOne({ _id: newPokemonId })
 
 // ==========================================
 // 2. Move a Pokémon from one trainer to another
@@ -28,23 +28,23 @@ const pokemonId = "217";
 const newTrainerId = "1";
 
 // Test before
-db.pokemon.aggregate([
+db.Pokemon.aggregate([
 	{ $match: { _id: pokemonId } },
-	{ $lookup: { from: "trainer", localField: "_id", foreignField: "owns", as: "owners" } }
+	{ $lookup: { from: "Trainer", localField: "_id", foreignField: "owns", as: "owners" } }
 ])
 
 // Command
 // Remove references to the Pokemon from any trainer (1 pokemon -> 1 trainer)
-db.trainer.updateMany({ owns: pokemonId }, { $pull: { owns: pokemonId } })
+db.Trainer.updateMany({ owns: pokemonId }, { $pull: { owns: pokemonId } })
 
 // Add the Pokemon to a trainer (ensure owns is an array first, then add)
-db.trainer.updateOne({ _id: newTrainerId, $or: [ { owns: { $exists: false } }, { owns: null } ] }, { $set: { owns: [] } });
-db.trainer.updateOne({ _id: newTrainerId }, { $addToSet: { owns: pokemonId } });
+db.Trainer.updateOne({ _id: newTrainerId, $or: [ { owns: { $exists: false } }, { owns: null } ] }, { $set: { owns: [] } });
+db.Trainer.updateOne({ _id: newTrainerId }, { $addToSet: { owns: pokemonId } });
 
 // Test after
-db.pokemon.aggregate([
+db.Pokemon.aggregate([
 	{ $match: { _id: pokemonId } },
-	{ $lookup: { from: "trainer", localField: "_id", foreignField: "owns", as: "owners" } }
+	{ $lookup: { from: "Trainer", localField: "_id", foreignField: "owns", as: "owners" } }
 ])
 
 // ================================================================
@@ -53,25 +53,25 @@ db.pokemon.aggregate([
 const baseId = "1";  // Basic PokemonId
 
 // Test before
-db.pokemon.findOne({ _id: baseId });
+db.Pokemon.findOne({ _id: baseId });
 
 // Command
-const base = db.pokemon.findOne({ _id: baseId });
+const base = db.Pokemon.findOne({ _id: baseId });
 const middleId = base.evolves_to;
-const middle = db.pokemon.findOne({ _id: middleId });
+const middle = db.Pokemon.findOne({ _id: middleId });
 const finalId = middle.evolves_to;
 
 // 1) Any Pokemon that evolved into middle should now evolve into final
-db.pokemon.updateMany(
+db.Pokemon.updateMany(
   { evolves_to: middleId },
   { $set: { evolves_to: finalId } }
 );
 
 // 2) Delete the middle evolution
-db.pokemon.deleteOne({ _id: middleId });
+db.Pokemon.deleteOne({ _id: middleId });
 
 // Test after
-db.pokemon.find(
+db.Pokemon.find(
   { _id: { $in: [baseId, middleId, finalId] } },
   { _id: 1, name: 1, evolves_to: 1 }
 );
@@ -79,7 +79,7 @@ db.pokemon.find(
 // =========================================================================
 // 4. Remove the gym leader with the lowest win ratio and delete the trainer
 // =========================================================================
-const worstLeader = db.trainer.aggregate([
+const worstLeader = db.Trainer.aggregate([
   // Only gym leaders
   {
     $match: {
@@ -90,7 +90,7 @@ const worstLeader = db.trainer.aggregate([
   // Look up all battles where this trainer participated (winner OR loser)
   {
     $lookup: {
-      from: "battles",
+      from: "Battle",
       let: { tid: "$_id" },
       pipeline: [
         {
@@ -152,17 +152,17 @@ const worstLeader = db.trainer.aggregate([
   { $limit: 1 }
 ]).toArray()[0];
 
-db.trainer.deleteOne({ _id: worstLeader._id });
+db.Trainer.deleteOne({ _id: worstLeader._id });
 
 // ====================================================================
 // 5. Create the trainer Mario, give him the two strongest free Pokémon
 // and assign him to an ownerless gym
 // ====================================================================
-const freeStrongest = db.pokemon.aggregate([
+const freeStrongest = db.Pokemon.aggregate([
   // Join with trainers that own this pokemon
   {
     $lookup: {
-      from: "trainer",
+      from: "Trainer",
       localField: "_id",
       foreignField: "owns",
       as: "owners"
@@ -192,10 +192,10 @@ const marioPokemonIds = freeStrongest.map(p => p._id);
 marioPokemonIds;
 
 // find an ownerless gym
-const freeGym = db.gym.aggregate([
+const freeGym = db.Gym.aggregate([
   {
     $lookup: {
-      from: "trainer",
+      from: "Trainer",
       localField: "_id",
       foreignField: "leads",
       as: "leaders"
@@ -222,7 +222,7 @@ const mario = {
   leads: marioGymId
 };
 
-db.trainer.insertOne(mario);
+db.Trainer.insertOne(mario);
 
 // test after
-db.trainer.findOne({ _id: marioId});
+db.Trainer.findOne({ _id: marioId});
