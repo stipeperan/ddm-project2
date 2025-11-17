@@ -272,11 +272,10 @@
     ]);
     \end{lstlisting}
 
-    \subsubsection{Most winning trainer + most winning Pokémon (UNION-style)}
+    \subsubsection{Most winning trainer + most winning Pokémon}
     The execution time for the following query was measured \textbf{27} ms
     \begin{lstlisting}
     db.Battle.aggregate([
-      // Part A: most winning trainer
       {
         $group: {
           _id: "$participants.winner.trainer_id",
@@ -334,6 +333,92 @@
           ]
         }
       }
+    ]);
+    \end{lstlisting}
+
+    % 6
+    \subsubsection{Wins for each Pokémon and its evolutions (sum over evolution chain)}
+    \begin{lstlisting}
+    db.Pokemon.aggregate([
+      {
+        $lookup: {
+          from: "Pokemon",
+          localField: "_id",
+          foreignField: "evolves_to",
+          as: "prevForms"
+        }
+      },
+      { $match: { prevForms: { $eq: [] } } },
+
+      // Get full evolution line starting from the base
+      {
+        $graphLookup: {
+          from: "Pokemon",
+          startWith: "$_id",
+          connectFromField: "evolves_to",
+          connectToField: "_id",
+          as: "line"
+        }
+      },
+
+      // Build an array of all Pokemon IDs in the line: base + descendants
+      {
+        $project: {
+          rootPokemon: "$name",
+          lineIds: {
+            $concatArrays: [
+              ["$_id"],
+              {
+                $map: {
+                  input: "$line",
+                  as: "p",
+                  in: "$$p._id"
+                }
+              }
+            ]
+          }
+        }
+      },
+
+      // Count wins for any Pokemon in this line
+      {
+        $lookup: {
+          from: "Battle",
+          let: { ids: "$lineIds" },
+          pipeline: [
+            {
+              $match: {
+                $expr: {
+                  $in: ["$participants.winner.pokemon_id", "$$ids"]
+                }
+              }
+            },
+            { $count: "wins_in_chain" }
+          ],
+          as: "winsAgg"
+        }
+      },
+
+      // Normalize missing wins to 0
+      {
+        $addFields: {
+          wins_in_chain: {
+            $ifNull: [
+              { $arrayElemAt: ["$winsAgg.wins_in_chain", 0] },
+              0
+            ]
+          }
+        }
+      },
+
+      {
+        $project: {
+          _id: 0,
+          rootPokemon: 1,
+          wins_in_chain: 1
+        }
+      },
+      { $sort: { wins_in_chain: -1, rootPokemon: 1 } }
     ]);
     \end{lstlisting}
 
@@ -635,6 +720,80 @@
         }
       },
       { $sort: { pokemon: 1 } }
+    ]);
+    \end{lstlisting}
+
+    % 15
+    \subsubsection{Highest improvement (total) from base to max evolution}
+    \begin{lstlisting}
+    db.Pokemon.aggregate([
+      // Base evolutions: no previous form
+      {
+        $lookup: {
+          from: "Pokemon",
+          localField: "_id",
+          foreignField: "evolves_to",
+          as: "prevForms"
+        }
+      },
+      { $match: { prevForms: { $eq: [] } } },
+    
+      // Get all evolutions in the line (descendants)
+      {
+        $graphLookup: {
+          from: "Pokemon",
+          startWith: "$_id",
+          connectFromField: "evolves_to",
+          connectToField: "_id",
+          as: "line"
+        }
+      },
+    
+      // Convert totals to numbers
+      {
+        $addFields: {
+          baseTotal: { $toInt: "$stats.tot" },
+          lineTotals: {
+            $map: {
+              input: "$line",
+              as: "p",
+              in: { $toInt: "$$p.stats.tot" }
+            }
+          }
+        }
+      },
+    
+      // Max descendant total (or base itself if no descendants)
+      {
+        $addFields: {
+          maxDescTotal: {
+            $cond: [
+              { $gt: [{ $size: "$lineTotals" }, 0] },
+              { $max: "$lineTotals" },
+              "$baseTotal"
+            ]
+          }
+        }
+      },
+    
+      // Improvement = maxDescTotal - baseTotal
+      {
+        $addFields: {
+          improvement: { $subtract: ["$maxDescTotal", "$baseTotal"] }
+        }
+      },
+    
+      {
+        $project: {
+          _id: 0,
+          basePokemon: "$name",
+          baseTotal: 1,
+          maxDescTotal: 1,
+          improvement: 1
+        }
+      },
+      { $sort: { improvement: -1, basePokemon: 1 } },
+      { $limit: 20 }
     ]);
     \end{lstlisting}
 

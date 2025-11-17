@@ -154,9 +154,8 @@ db.Battle.aggregate([
   }
 ]);
 
-// 5. Most winning trainer + most winning Pokémon (UNION-style)
+// 5. Most winning trainer + most winning Pokémon
 db.Battle.aggregate([
-  // Part A: most winning trainer
   {
     $group: {
       _id: "$participants.winner.trainer_id",
@@ -217,46 +216,88 @@ db.Battle.aggregate([
 ]);
 
 // 6. Wins for each Pokémon and its evolutions (sum over evolution chain)
-// Assumes evolution_line[0] = root Pokémon name (or ID – adjust if needed)
-// db.Battle.aggregate([
-//   // count wins per Pokémon
-//   {
-//     $group: {
-//       _id: "$participants.winner.pokemon_id",
-//       wins: { $sum: 1 }
-//     }
-//   },
-//   // join with Pokemon to get evolution_line
-//   {
-//     $lookup: {
-//       from: "Pokemon",
-//       localField: "_id",
-//       foreignField: "_id",
-//       as: "pokemon"
-//     }
-//   },
-//   { $unwind: "$pokemon" },
-//   {
-//     $project: {
-//       wins: 1,
-//       root: { $arrayElemAt: ["$pokemon.evolution_line", 0] }
-//     }
-//   },
-//   {
-//     $group: {
-//       _id: "$root",
-//       wins_in_chain: { $sum: "$wins" }
-//     }
-//   },
-//   { $sort: { wins_in_chain: -1, _id: 1 } },
-//   {
-//     $project: {
-//       _id: 0,
-//       rootPokemon: "$_id",
-//       wins_in_chain: 1
-//     }
-//   }
-// ]);
+db.Pokemon.aggregate([
+  // Base Pokémon: nobody evolves into them
+  {
+    $lookup: {
+      from: "Pokemon",
+      localField: "_id",
+      foreignField: "evolves_to",
+      as: "prevForms"
+    }
+  },
+  { $match: { prevForms: { $eq: [] } } },
+
+  // Get full evolution line starting from the base
+  {
+    $graphLookup: {
+      from: "Pokemon",
+      startWith: "$_id",
+      connectFromField: "evolves_to",
+      connectToField: "_id",
+      as: "line"
+    }
+  },
+
+  // Build an array of all Pokemon IDs in the line: base + descendants
+  {
+    $project: {
+      rootPokemon: "$name",
+      lineIds: {
+        $concatArrays: [
+          ["$_id"],
+          {
+            $map: {
+              input: "$line",
+              as: "p",
+              in: "$$p._id"
+            }
+          }
+        ]
+      }
+    }
+  },
+
+  // Count wins for any Pokemon in this line
+  {
+    $lookup: {
+      from: "Battle",
+      let: { ids: "$lineIds" },
+      pipeline: [
+        {
+          $match: {
+            $expr: {
+              $in: ["$participants.winner.pokemon_id", "$$ids"]
+            }
+          }
+        },
+        { $count: "wins_in_chain" }
+      ],
+      as: "winsAgg"
+    }
+  },
+
+  // Normalize missing wins to 0
+  {
+    $addFields: {
+      wins_in_chain: {
+        $ifNull: [
+          { $arrayElemAt: ["$winsAgg.wins_in_chain", 0] },
+          0
+        ]
+      }
+    }
+  },
+
+  {
+    $project: {
+      _id: 0,
+      rootPokemon: 1,
+      wins_in_chain: 1
+    }
+  },
+  { $sort: { wins_in_chain: -1, rootPokemon: 1 } }
+]);
 
 // 7. Gym that hosted the highest number of battles
 db.Battle.aggregate([
@@ -538,71 +579,75 @@ db.Type.aggregate([
 ]);
 
 // 15. Highest improvement (Total) from base → max evolution
-// Assumes evolution_line[0] is the base Pokémon's name
-// db.Pokemon.aggregate([
-//   // 1) Select only base evolutions (no prev evolution)
-//   {
-//     $match: { "evolution.prev": null }
-//   },
+db.Pokemon.aggregate([
+  // 1) Base evolutions: no previous form
+  {
+    $lookup: {
+      from: "Pokemon",
+      localField: "_id",
+      foreignField: "evolves_to",
+      as: "prevForms"
+    }
+  },
+  { $match: { prevForms: { $eq: [] } } },
 
-//   // 2) Lookup all descendants via graph recursion
-//   {
-//     $graphLookup: {
-//       from: "Pokemon",
-//       startWith: "$_id",
-//       connectFromField: "evolution.next",
-//       connectToField: "_id",
-//       as: "descendants"
-//     }
-//   },
+  // 2) Get all evolutions in the line (descendants)
+  {
+    $graphLookup: {
+      from: "Pokemon",
+      startWith: "$_id",
+      connectFromField: "evolves_to",
+      connectToField: "_id",
+      as: "line"
+    }
+  },
 
-//   // 3) Convert base total and descendants' totals to numbers
-//   {
-//     $addFields: {
-//       baseTotalNum: { $toInt: "$stats.tot" },
-//       descendantsTotals: {
-//         $map: {
-//           input: "$descendants",
-//           as: "d",
-//           in: { $toInt: "$$d.stats.tot" }
-//         }
-//       }
-//     }
-//   },
+  // 3) Convert totals to numbers
+  {
+    $addFields: {
+      baseTotal: { $toInt: "$stats.tot" },
+      lineTotals: {
+        $map: {
+          input: "$line",
+          as: "p",
+          in: { $toInt: "$$p.stats.tot" }
+        }
+      }
+    }
+  },
 
-//   // 4) Compute max descendant total
-//   {
-//     $addFields: {
-//       maxDescTotalNum: { $max: "$descendantsTotals" }
-//     }
-//   },
+  // 4) Max descendant total (or base itself if no descendants)
+  {
+    $addFields: {
+      maxDescTotal: {
+        $cond: [
+          { $gt: [{ $size: "$lineTotals" }, 0] },
+          { $max: "$lineTotals" },
+          "$baseTotal"
+        ]
+      }
+    }
+  },
 
-//   // 5) Compute improvement (max descendant total − base total)
-//   {
-//     $addFields: {
-//       improvement: {
-//         $subtract: ["$maxDescTotalNum", "$baseTotalNum"]
-//       }
-//     }
-//   },
+  // 5) Improvement = maxDescTotal − baseTotal
+  {
+    $addFields: {
+      improvement: { $subtract: ["$maxDescTotal", "$baseTotal"] }
+    }
+  },
 
-//   // 6) Output final fields only
-//   {
-//     $project: {
-//       _id: 0,
-//       basePokemon: "$name",
-//       baseTotal: "$baseTotalNum",
-//       maxDescTotal: "$maxDescTotalNum",
-//       improvement: 1
-//     }
-//   },
-
-//   // 7) SORT: decreasing order (biggest improvement first)
-//   { $sort: { improvement: -1 } },
-
-//   // 8) limit to top 20 
-//   { $limit: 20 }
-// ]);
+  {
+    $project: {
+      _id: 0,
+      basePokemon: "$name",
+      baseTotal: 1,
+      maxDescTotal: 1,
+      improvement: 1
+    }
+  },
+  { $sort: { improvement: -1, basePokemon: 1 } },
+  { $limit: 20 }
+]);
 
 // 16. Gyms and their type specialization
 db.Gym.aggregate([
