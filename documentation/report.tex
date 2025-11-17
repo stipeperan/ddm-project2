@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{float}
+\usepackage{hyperref}
 
 \geometry{a4paper, margin=1in}      
 \title{Project 2 - Pokémon world in MongoDB}
@@ -32,6 +33,7 @@
     \maketitle
     
     \section{Project scenario}
+    \label{sec:proj-scen}
     Following the first project implemented in Neo4j, we decided to model the same Pokémon world in MongoDB. 
     Instead of focusing on graph relationships such as \texttt{EVOLVES\_TO} or \texttt{OWNS}, this second project focuses on storing and querying semistructured documents efficiently.
 
@@ -55,26 +57,19 @@
 
     \subsection{Collections and schema design}
     The document model was designed according to the \emph{Schema-on-Read} philosophy introduced during the NoSQL lectures. Each document stores semistructured data in JSON format, allowing variable fields and embedded subdocuments.
-    \begin{figure}[h]
-      \centering
-      \includegraphics[width=1\linewidth]{Simple Diagram (for presentation).png}
-      \caption{MongoDB schema relationships in brief}
-      \label{fig:mongo-relationships}
-    \end{figure}
 
-    \begin{figure}[h]
-      \centering
-      \includegraphics[width=1\linewidth]{Detailed Diagram (for technical review).png}
-      \caption{MongoDB full schema relationships}
-    \end{figure}    
+    As explained in the \nameref{sec:proj-scen} introduction, we began with the original ER model and the previous Neo4J structure, then adapted and refined several attributes to better suit MongoDB's document-oriented design.
+    For instance, we chose not to create a separate \texttt{Form} collection. Instead, we embedded that information directly within each Pokémon document, where it fits more naturally.
+    As shown in Figure~\ref{fig:mongo-structure}, the final result of this transformation can be clearly observed in the structure of the MongoDB database. 
+The \texttt{mixed} field type indicates that a value may be either \texttt{null} or \texttt{string}, reflecting optional attributes within the dataset.
+
 
     \begin{figure}[H]
       \centering
-      \includegraphics[width=1\linewidth]{pokemon_model.png}
-      \caption{MongoDB structure}
-      \label{fig:mongo-structure}
+      \includegraphics[width=1\linewidth]{er.png}
+      \caption{ER diagram}
+      \label{fig:er-diagram}
     \end{figure}
-    \noindent As shown in Figure~\ref{fig:mongo-structure}, the \texttt{mixed} field type indicates that a value may be either \texttt{null} or \texttt{string}.
 
     \paragraph{Collections}
     \begin{itemize}
@@ -84,6 +79,13 @@
     \item \textbf{Type}: static collection containing the 18 Pokémon types.
     \item \textbf{Battle}: match history between trainers and Pokémon.
     \end{itemize}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=1\linewidth]{pokemon_model.png}
+      \caption{MongoDB structure}
+      \label{fig:mongo-structure}
+    \end{figure}
 
     \section{Results}
     \subsection{Queries}
